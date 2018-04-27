@@ -4,12 +4,12 @@ package com.xaut.client.message;
 import com.xaut.client.constant.MessageContainerType;
 import org.apache.commons.lang3.StringUtils;
 
-import java.io.Serializable;
 import javax.jms.JMSException;
 import javax.jms.Queue;
 import javax.jms.Topic;
+import java.io.Serializable;
 
-public class SupremeMQDestination implements Queue,Topic, Serializable {
+public class SupremeMQDestination implements Queue, Topic, Serializable {
     private static final long serialVersionUID = 4315929928684782158L;
     /**
      * 消息名字
@@ -21,7 +21,7 @@ public class SupremeMQDestination implements Queue,Topic, Serializable {
     protected String type;
 
     public SupremeMQDestination(String name, String type) {
-        if(StringUtils.isBlank(name) || StringUtils.isBlank(type)){
+        if (StringUtils.isBlank(name) || StringUtils.isBlank(type)) {
             throw new IllegalArgumentException();
         }
         this.name = name;
@@ -37,10 +37,12 @@ public class SupremeMQDestination implements Queue,Topic, Serializable {
     public String getTopicName() throws JMSException {
         return name;
     }
-    public boolean isQueue(){
+
+    public boolean isQueue() {
         return MessageContainerType.QUEUE.getValue().equals(type);
     }
-    public boolean isTopic(){
+
+    public boolean isTopic() {
         return MessageContainerType.TOPIC.getValue().equals(type);
     }
 
