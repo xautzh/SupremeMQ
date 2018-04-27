@@ -14,11 +14,11 @@ public class SupremeMQDestination implements Queue,Topic, Serializable {
     /**
      * 消息名字
      */
-    private String name;
+    protected String name;
     /**
      * 消息类型
      */
-    private String type;
+    protected String type;
 
     public SupremeMQDestination(String name, String type) {
         if(StringUtils.isBlank(name) || StringUtils.isBlank(type)){
