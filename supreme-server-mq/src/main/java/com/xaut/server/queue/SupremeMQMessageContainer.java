@@ -7,7 +7,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.BlockingDeque;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.LinkedBlockingQueue;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,11 +27,11 @@ public class SupremeMQMessageContainer extends SupremeMQDestination {
     /**
      * 待发送的消息队列
      */
-    private transient BlockingDeque<Message> messageQueue = new LinkedBlockingDeque<>();
+    private transient BlockingQueue<Message> messageQueue = new LinkedBlockingQueue<>();
     /**
      * 已发送的消息队列
      */
-    private transient BlockingDeque<Message> consumeMessageQueue = new LinkedBlockingDeque<>();
+    private transient BlockingQueue<Message> consumeMessageQueue = new LinkedBlockingQueue<>();
 
     private static Logger logger = LoggerFactory.getLogger(SupremeMQMessageContainer.class);
 
