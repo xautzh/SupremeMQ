@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-	<substitutionProperty name="log.base" value="logs/suprememq-client" />
+	<substitutionProperty name="log.base" value="logs/supreme-client" />
 	<substitutionProperty name="max.size" value="500MB" />
 	<jmxConfigurator />
 	<appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">	
@@ -11,9 +11,9 @@
 	
 	<appender name="logfile"
 			class="ch.qos.logback.core.rolling.RollingFileAppender">
-			<File>d:/suprememq-client.log</File>
+			<File>d:/supreme-client.log</File>
 			<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-				<FileNamePattern>d:/${log.base}/suprememq-client%d{yyyy-MM-dd}.%i.log</FileNamePattern>
+				<FileNamePattern>d:/${log.base}/supreme-client%d{yyyy-MM-dd}.%i.log</FileNamePattern>
 				<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">  
 		      		<maxFileSize>${max.size}</maxFileSize>  
 		     	</timeBasedFileNamingAndTriggeringPolicy>  
