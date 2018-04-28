@@ -43,11 +43,13 @@ public class SupremeMQMessageContainer extends SupremeMQDestination {
      */
 
     public void putMessage(Message message) throws JMSException {
-        message.setJMSTimestamp(new Date().getTime());
         try {
+            message.setJMSTimestamp(new Date().getTime());
             messageQueue.put(message);
+            logger.debug("往队列【{}】添加一条消息:{}", name, message);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            logger.error("往队列【{}】添加消息【{}】失败:{}", name, message, e);
+            throw new JMSException(e.getMessage());
         }
     }
 
@@ -88,7 +90,7 @@ public class SupremeMQMessageContainer extends SupremeMQDestination {
             messageList.add(messageQueue.take());
             //尝试获取剩下的消息
             Message msg = null;
-            for (int i = 0; i < messageSize; i++) {
+            for (int i = 1; i < messageSize; i++) {
                 msg = messageQueue.poll();
                 if (msg != null) {
                     messageList.add(msg);

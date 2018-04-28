@@ -127,4 +127,29 @@ public class SupremeMQStreamMessage extends Message implements StreamMessage {
     public void reset() throws JMSException {
 
     }
+
+    @Override
+    public byte[] getJMSCorrelationIDAsBytes() throws JMSException {
+        return new byte[0];
+    }
+
+    @Override
+    public void setJMSCorrelationIDAsBytes(byte[] bytes) throws JMSException {
+
+    }
+
+    @Override
+    public void clearProperties() throws JMSException {
+
+    }
+
+    @Override
+    public void acknowledge() throws JMSException {
+
+    }
+
+    @Override
+    public void clearBody() throws JMSException {
+
+    }
 }

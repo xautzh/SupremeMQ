@@ -4,6 +4,7 @@ import com.xaut.client.message.Message;
 
 import javax.jms.JMSException;
 import javax.jms.MapMessage;
+import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -17,127 +18,153 @@ public class SupremeMQMapMessage extends Message implements MapMessage {
     private ConcurrentHashMap<String, Object> messageMap = new ConcurrentHashMap();
 
     @Override
-    public boolean getBoolean(String s) throws JMSException {
-        return false;
+    public boolean getBoolean(String key) throws JMSException {
+        return (Boolean) messageMap.get(key);
     }
 
     @Override
-    public byte getByte(String s) throws JMSException {
-        return 0;
+    public byte getByte(String key) throws JMSException {
+        return (Byte) messageMap.get(key);
     }
 
     @Override
-    public short getShort(String s) throws JMSException {
-        return 0;
+    public short getShort(String key) throws JMSException {
+        return (Short) messageMap.get(key);
     }
 
     @Override
-    public char getChar(String s) throws JMSException {
-        return 0;
+    public char getChar(String key) throws JMSException {
+        return (Character) messageMap.get(key);
     }
 
     @Override
-    public int getInt(String s) throws JMSException {
-        return 0;
+    public int getInt(String key) throws JMSException {
+        return (Integer) messageMap.get(key);
     }
 
     @Override
-    public long getLong(String s) throws JMSException {
-        return 0;
+    public long getLong(String key) throws JMSException {
+        return (Long) messageMap.get(key);
     }
 
     @Override
-    public float getFloat(String s) throws JMSException {
-        return 0;
+    public float getFloat(String key) throws JMSException {
+        return (Float) messageMap.get(key);
     }
 
     @Override
-    public double getDouble(String s) throws JMSException {
-        return 0;
+    public double getDouble(String key) throws JMSException {
+        return (Double) messageMap.get(key);
     }
 
     @Override
-    public String getString(String s) throws JMSException {
-        return null;
+    public String getString(String key) throws JMSException {
+        return (String) messageMap.get(key);
     }
 
     @Override
-    public byte[] getBytes(String s) throws JMSException {
-        return new byte[0];
+    public byte[] getBytes(String key) throws JMSException {
+        return (byte[])messageMap.get(key);
     }
 
     @Override
-    public Object getObject(String s) throws JMSException {
-        return null;
+    public Object getObject(String key) throws JMSException {
+        return messageMap.get(key);
     }
 
     @Override
     public Enumeration getMapNames() throws JMSException {
-        return null;
+        return (Enumeration<String>) messageMap.keySet();
     }
 
     @Override
-    public void setBoolean(String s, boolean b) throws JMSException {
-
-    }
-
-    @Override
-    public void setByte(String s, byte b) throws JMSException {
+    public void setBoolean(String key, boolean value) throws JMSException {
+        messageMap.put(key,value);
 
     }
 
     @Override
-    public void setShort(String s, short i) throws JMSException {
+    public void setByte(String key, byte value) throws JMSException {
+        messageMap.put(key,value);
+    }
+
+    @Override
+    public void setShort(String key, short value) throws JMSException {
+        messageMap.put(key,value);
+    }
+
+    @Override
+    public void setChar(String key, char value) throws JMSException {
+        messageMap.put(key,value);
+    }
+
+    @Override
+    public void setInt(String key, int value) throws JMSException {
+        messageMap.put(key,value);
+    }
+
+    @Override
+    public void setLong(String key, long value) throws JMSException {
+        messageMap.put(key,value);
+    }
+
+    @Override
+    public void setFloat(String key, float value) throws JMSException {
+        messageMap.put(key,value);
+    }
+
+    @Override
+    public void setDouble(String key, double value) throws JMSException {
+        messageMap.put(key,value);
+    }
+
+    @Override
+    public void setString(String key, String value) throws JMSException {
+        messageMap.put(key,value);
+    }
+
+    @Override
+    public void setBytes(String key, byte[] value) throws JMSException {
+        messageMap.put(key,value);
+    }
+
+    @Override
+    public void setBytes(String key, byte[] value, int from, int to) throws JMSException {
+        messageMap.put(key,Arrays.copyOfRange(value, from, to));
+    }
+
+    @Override
+    public void setObject(String key, Object value) throws JMSException {
+        messageMap.put(key,value);
+    }
+
+    @Override
+    public boolean itemExists(String key) throws JMSException {
+        return messageMap.contains(key);
+    }
+
+    @Override
+    public byte[] getJMSCorrelationIDAsBytes() throws JMSException {
+        return new byte[0];
+    }
+
+    @Override
+    public void setJMSCorrelationIDAsBytes(byte[] bytes) throws JMSException {
 
     }
 
     @Override
-    public void setChar(String s, char c) throws JMSException {
+    public void clearProperties() throws JMSException {
 
     }
 
     @Override
-    public void setInt(String s, int i) throws JMSException {
+    public void acknowledge() throws JMSException {
 
     }
 
     @Override
-    public void setLong(String s, long l) throws JMSException {
+    public void clearBody() throws JMSException {
 
-    }
-
-    @Override
-    public void setFloat(String s, float v) throws JMSException {
-
-    }
-
-    @Override
-    public void setDouble(String s, double v) throws JMSException {
-
-    }
-
-    @Override
-    public void setString(String s, String s1) throws JMSException {
-
-    }
-
-    @Override
-    public void setBytes(String s, byte[] bytes) throws JMSException {
-
-    }
-
-    @Override
-    public void setBytes(String s, byte[] bytes, int i, int i1) throws JMSException {
-
-    }
-
-    @Override
-    public void setObject(String s, Object o) throws JMSException {
-
-    }
-
-    @Override
-    public boolean itemExists(String s) throws JMSException {
-        return false;
     }
 }

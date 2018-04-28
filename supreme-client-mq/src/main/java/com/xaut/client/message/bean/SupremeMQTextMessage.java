@@ -33,4 +33,29 @@ public class SupremeMQTextMessage extends Message implements TextMessage {
     public String getText() throws JMSException {
         return this.textMessage;
     }
+
+    @Override
+    public byte[] getJMSCorrelationIDAsBytes() throws JMSException {
+        return new byte[0];
+    }
+
+    @Override
+    public void setJMSCorrelationIDAsBytes(byte[] bytes) throws JMSException {
+
+    }
+
+    @Override
+    public void clearProperties() throws JMSException {
+
+    }
+
+    @Override
+    public void acknowledge() throws JMSException {
+
+    }
+
+    @Override
+    public void clearBody() throws JMSException {
+
+    }
 }
