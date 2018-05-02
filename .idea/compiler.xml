@@ -6,10 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="client" />
+        <module name="MQ" />
+        <module name="server" />
         <module name="supreme-client-mq" />
         <module name="supreme-server-mq" />
         <module name="SupremeMQ" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="client" target="1.8" />
+      <module name="MQ" target="1.7" />
+      <module name="server" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

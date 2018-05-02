@@ -77,5 +77,6 @@ public class SupremeMQMessageContainerTest {
 
     @Test
     public void remove() {
+        System.out.println();
     }
 }
