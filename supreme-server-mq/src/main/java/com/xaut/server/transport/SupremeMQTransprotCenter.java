@@ -3,8 +3,10 @@ package com.xaut.server.transport;
 import com.xaut.client.message.bean.SupremeMQMessage;
 import com.xaut.server.manager.SupremeMQConsumerManager;
 
+import javax.jms.JMSException;
+
 public interface SupremeMQTransprotCenter {
-    void start();
+    void start() throws JMSException;
 
     void close();
 

@@ -7,9 +7,13 @@ import com.xaut.server.transport.SupremeMQServerTransport;
 import com.xaut.server.transport.SupremeMQTransprotCenter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 
+import javax.jms.JMSException;
+import java.io.IOException;
 import java.net.InetAddress;
 import java.net.ServerSocket;
+import java.net.Socket;
 
 public class TcpSupremeMQTransportCenter implements SupremeMQTransprotCenter {
 
@@ -17,7 +21,10 @@ public class TcpSupremeMQTransportCenter implements SupremeMQTransprotCenter {
     private int port;
     private ServerSocket serverSocket;
 
+    private @Value("${transport-backlog}") int backlog;
+
     private SupremeMQConsumerManager supremeMQConsumerManager;
+
     private SupremeMQMessageManager supremeMQMessageManager;
 
 
@@ -33,7 +40,30 @@ public class TcpSupremeMQTransportCenter implements SupremeMQTransprotCenter {
     }
 
     @Override
-    public void start() {
+    public void start() throws JMSException {
+        try {
+            serverSocket = new ServerSocket(port,backlog,inetAddress);
+        } catch (IOException e) {
+            logger.error("ServerSocket初始化失败", e);
+            throw new JMSException(String.format("TcpSupremeMQServerTransport绑定URI出错：【%s】【%s】【%s】",
+                    new Object[]{inetAddress, port, e.getMessage()}));
+        }
+        TcpSupremeMQServerTransport tcpSupremeMQServerTransport = null;
+        //Dispatcher
+        Socket socket = null;
+        while (true){
+            try {
+                socket = serverSocket.accept();
+                tcpSupremeMQServerTransport = new TcpSupremeMQServerTransport(socket,this);
+                //Dispatcher
+                tcpSupremeMQServerTransport.start();
+                //Dispatcher.start()
+                //map.put(tcpSupremeMQServerTransport,Dispatcher)
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
 
     }
 

@@ -14,14 +14,14 @@ public abstract class Message implements javax.jms.Message, Serializable {
     private static final long serialVersionUID = -7369304352831197854L;
     protected String messageId;
     protected String correlationId;    //	关联ID
-    protected int deliverMode;    // 持久模式和非持久模式
-    protected long timestamp;
-    protected long expiration;        // 有效期
-    protected int priority;        // 优先级
-    protected boolean redelivered;    // 重传标记
-    protected String messageType;    // 消息类型
-    protected SupremeMQDestination destination;
-    protected SupremeMQDestination replyDestination;
+    protected int deliverMode;         // 持久模式和非持久模式
+    protected long timestamp;          //发送时间
+    protected long expiration;         // 有效期
+    protected int priority;            // 优先级
+    protected boolean redelivered;     // 重传标记
+    protected String messageType;      // 消息类型
+    protected SupremeMQDestination destination;//目的地
+    protected SupremeMQDestination replyDestination;//应答目的地
 
     protected Map<String, Boolean> booleanMap = new HashMap<String, Boolean>(5);
     protected Map<String, Byte> byteMap = new HashMap<String, Byte>(5);

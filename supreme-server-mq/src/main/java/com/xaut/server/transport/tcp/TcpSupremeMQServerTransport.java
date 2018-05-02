@@ -10,8 +10,10 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class TcpSupremeMQTransport implements SupremeMQServerTransport {
+public class TcpSupremeMQServerTransport implements SupremeMQServerTransport {
     private Socket socket;
+
+    private TcpSupremeMQTransportCenter tcpSupremeMQTransportCenter;
     //接收消息队列
     private BlockingQueue<Message> sendMessageQueue = new LinkedBlockingQueue<>();
     //发送消息的队列
@@ -25,7 +27,17 @@ public class TcpSupremeMQTransport implements SupremeMQServerTransport {
 
     private byte[] objectByte = new byte[Message.OBJECT_BYTE_SIZE];
 
-    private Logger logger = LoggerFactory.getLogger(TcpSupremeMQTransport.class);
+    private Logger logger = LoggerFactory.getLogger(TcpSupremeMQServerTransport.class);
+
+    public TcpSupremeMQServerTransport(Socket socket, TcpSupremeMQTransportCenter tcpSupremeMQTransportCenter) {
+        if(socket == null) {
+            logger.error("Socket对象不能为空！");
+            throw new IllegalArgumentException("Socket不能为空！");
+        }
+
+        this.socket = socket;
+        this.tcpSupremeMQTransportCenter = tcpSupremeMQTransportCenter;
+    }
 
 
     @Override
