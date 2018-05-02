@@ -5,11 +5,14 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import javax.jms.JMSException;
+
 public class ServerTest {
     @Test
-    public void serverTest(){
+    public void serverTest() throws JMSException {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         SupremeMQServerManager supremeMQServerManager = (SupremeMQServerManager) context.getBean("supremeMQServerManager");
+        System.out.println(supremeMQServerManager.getUrl());
         //启动消息中间件服务器
         supremeMQServerManager.start();
     }

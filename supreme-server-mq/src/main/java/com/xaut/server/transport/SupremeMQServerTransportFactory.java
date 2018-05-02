@@ -2,6 +2,7 @@ package com.xaut.server.transport;
 
 import com.xaut.client.transport.SupremeMQTransport;
 import com.xaut.client.transport.tcp.TcpMessageTransport;
+import com.xaut.server.transport.tcp.TcpSupremeMQTransportCenter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,15 +12,15 @@ import java.net.UnknownHostException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class SupremeMQTransportFactory {
+public class SupremeMQServerTransportFactory {
 
     //使用正则表达式判断url
     // 解析提供者URL的正则表达式字符串
     private final static String REGEX_STR = "([a-z]{3})://([0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}):([0-9]{1,6})";
 
-    private static Logger logger = LoggerFactory.getLogger(SupremeMQTransportFactory.class);
+    private static Logger logger = LoggerFactory.getLogger(SupremeMQServerTransportFactory.class);
 
-    public static SupremeMQTransport createSupremeMQTransport(String url) throws JMSException {
+    public static TcpSupremeMQTransportCenter createSupremeMQTransport(String url) throws JMSException {
         if (url == null) {
             logger.error("url为空");
             throw new JMSException("提供者url为空");
@@ -43,8 +44,8 @@ public class SupremeMQTransportFactory {
         //协议 tcp 。。。。后期使用枚举列出
         if (transportType.equals("tcp")) {
             try {
-                TcpMessageTransport tcpMessageTransport = new TcpMessageTransport(InetAddress.getByAddress(ipBytes), port);
-                return tcpMessageTransport;
+                TcpSupremeMQTransportCenter tcpSupremeMQTransportCenter = new TcpSupremeMQTransportCenter(InetAddress.getByAddress(ipBytes), port);
+                return tcpSupremeMQTransportCenter;
             } catch (UnknownHostException e) {
                 logger.error(e.getMessage());
                 throw new JMSException(e.getMessage());

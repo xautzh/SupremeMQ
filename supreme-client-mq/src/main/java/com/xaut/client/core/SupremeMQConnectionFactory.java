@@ -1,7 +1,8 @@
 package com.xaut.client.core;
 
 import com.xaut.client.transport.SupremeMQTransport;
-import com.xaut.server.transport.SupremeMQTransportFactory;
+import com.xaut.client.transport.SupremeMQTransportFactory;
+
 
 import javax.jms.*;
 
