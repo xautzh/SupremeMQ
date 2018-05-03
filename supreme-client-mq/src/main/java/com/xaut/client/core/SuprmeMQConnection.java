@@ -19,7 +19,7 @@ public class SuprmeMQConnection implements Connection {
 
     @Override
     public Session createSession(boolean b, int i) throws JMSException {
-        return null;
+        return new SupremeMQSession();
     }
 
     @Override
