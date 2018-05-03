@@ -1,4 +1,4 @@
-package com.xaut.client.constant;
+package com.xaut.server.constant;
 
 public enum MessageContainerType {
     QUEUE("QUEUE"),	// 队列

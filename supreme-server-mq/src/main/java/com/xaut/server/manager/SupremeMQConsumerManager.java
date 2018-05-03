@@ -1,6 +1,8 @@
 package com.xaut.server.manager;
 
-import com.xaut.client.message.Message;
+
+
+import com.xaut.server.message.Message;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ConcurrentHashMap;

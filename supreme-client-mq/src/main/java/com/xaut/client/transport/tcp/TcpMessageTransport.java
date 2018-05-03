@@ -1,7 +1,7 @@
 package com.xaut.client.transport.tcp;
 
-import com.xaut.client.message.Message;
 import com.xaut.client.transport.SupremeMQTransport;
+import com.xaut.server.message.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

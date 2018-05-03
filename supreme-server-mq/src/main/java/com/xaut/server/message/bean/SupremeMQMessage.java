@@ -1,7 +1,7 @@
-package com.xaut.client.message.bean;
+package com.xaut.server.message.bean;
 
 
-import com.xaut.client.message.Message;
+import com.xaut.server.message.Message;
 
 import javax.jms.JMSException;
 

@@ -1,7 +1,8 @@
-package com.xaut.client.message;
+package com.xaut.server.message;
 
 
-import com.xaut.client.constant.MessageContainerType;
+
+import com.xaut.server.constant.MessageContainerType;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.jms.JMSException;

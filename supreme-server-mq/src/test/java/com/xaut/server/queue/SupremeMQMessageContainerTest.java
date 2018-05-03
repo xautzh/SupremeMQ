@@ -1,8 +1,9 @@
 package com.xaut.server.queue;
 
-import com.xaut.client.message.bean.SupremeMQObjectMessage;
-import com.xaut.client.message.bean.SupremeMQTextMessage;
+
 import com.xaut.server.StudentTest;
+import com.xaut.server.message.bean.SupremeMQObjectMessage;
+import com.xaut.server.message.bean.SupremeMQTextMessage;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -48,10 +48,9 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>com.xaut</groupId>
-            <artifactId>client</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.7</version>
         </dependency>
     </dependencies>
 

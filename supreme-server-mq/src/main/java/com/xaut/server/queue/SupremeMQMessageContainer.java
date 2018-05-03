@@ -1,7 +1,8 @@
 package com.xaut.server.queue;
 
 
-import com.xaut.client.message.SupremeMQDestination;
+
+import com.xaut.server.message.SupremeMQDestination;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

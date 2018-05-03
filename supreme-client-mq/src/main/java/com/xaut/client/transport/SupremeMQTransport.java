@@ -1,6 +1,8 @@
 package com.xaut.client.transport;
 
-import com.xaut.client.message.Message;
+
+
+import com.xaut.server.message.Message;
 
 import javax.jms.JMSException;
 import java.util.concurrent.BlockingQueue;

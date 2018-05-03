@@ -59,6 +59,11 @@
             <version>3.7</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.xaut</groupId>
+            <artifactId>server</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
