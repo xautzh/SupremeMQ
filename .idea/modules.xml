@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/MQ.iml" filepath="$PROJECT_DIR$/MQ.iml" />
       <module fileurl="file://$PROJECT_DIR$/supreme-client-mq/client.iml" filepath="$PROJECT_DIR$/supreme-client-mq/client.iml" />
       <module fileurl="file://$PROJECT_DIR$/supreme-server-mq/server.iml" filepath="$PROJECT_DIR$/supreme-server-mq/server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/supreme-common-mq/supreme-common-mq.iml" filepath="$PROJECT_DIR$/supreme-common-mq/supreme-common-mq.iml" />
     </modules>
   </component>
 </project>
