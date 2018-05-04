@@ -1,9 +1,9 @@
 package com.xaut.server.queue;
 
 
+import com.xaut.common.message.bean.SupremeMQObjectMessage;
+import com.xaut.common.message.bean.SupremeMQTextMessage;
 import com.xaut.server.StudentTest;
-import com.xaut.server.message.bean.SupremeMQObjectMessage;
-import com.xaut.server.message.bean.SupremeMQTextMessage;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,19 +23,19 @@ public class SupremeMQMessageContainerTest {
     @Test
     public void putAndGetTextMessage() throws JMSException {
         SupremeMQTextMessage message = new SupremeMQTextMessage();
-        for (int i = 0; i < 10; i++) {
-            logger.debug("添加的当前消息id为：【{}】", i);
-            message.setText("hello message" + i);
+//        for (int i = 0; i < 10; i++) {
+//            logger.debug("添加的当前消息id为：【{}】", i);
+            message.setText("hello message");
             supremeMQMessageContainer.putMessage(message);
-        }
+//        }
 //        SupremeMQTextMessage msg = (SupremeMQTextMessage)supremeMQMessageContainer.takeMessage();
 //        List<SupremeMQTextMessage> msgList = (List) supremeMQMessageContainer.takeMessage(30);
 //        for (SupremeMQTextMessage txt : msgList) {
 //            logger.debug("取出的消息为：【{}】", txt.getText());
 //        }
-        for (int i= 0;i<10;i++){
+//        for (int i= 0;i<10;i++){
             supremeMQMessageContainer.takeMessage();
-        }
+//        }
     }
 
     @Test

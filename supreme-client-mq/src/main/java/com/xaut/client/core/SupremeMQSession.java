@@ -2,7 +2,7 @@ package com.xaut.client.core;
 
 import com.xaut.client.producer.SupremeMQMessageProducer;
 import com.xaut.client.transport.MessageDispatcher;
-import com.xaut.server.message.SupremeMQDestination;
+import com.xaut.common.message.SupremeMQDestination;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

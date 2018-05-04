@@ -1,4 +1,4 @@
-package com.xaut.server.message;
+package com.xaut.common.message;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;

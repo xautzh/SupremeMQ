@@ -2,7 +2,9 @@ package com.xaut.server.transport;
 
 
 
-import com.xaut.server.message.Message;
+
+
+import com.xaut.common.message.Message;
 
 import java.util.concurrent.BlockingQueue;
 

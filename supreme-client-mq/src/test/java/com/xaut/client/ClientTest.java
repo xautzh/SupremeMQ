@@ -1,8 +1,8 @@
 package com.xaut.client;
 
 import com.xaut.client.core.SupremeMQConnectionFactory;
-import com.xaut.server.constant.MessageContainerType;
-import com.xaut.server.message.SupremeMQDestination;
+import com.xaut.common.constant.MessageContainerType;
+import com.xaut.common.message.SupremeMQDestination;
 import org.junit.Test;
 
 import javax.jms.*;

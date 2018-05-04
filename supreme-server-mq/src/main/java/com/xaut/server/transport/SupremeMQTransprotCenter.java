@@ -1,7 +1,7 @@
 package com.xaut.server.transport;
 
+import com.xaut.common.message.bean.SupremeMQMessage;
 import com.xaut.server.manager.SupremeMQConsumerManager;
-import com.xaut.server.message.bean.SupremeMQMessage;
 
 import javax.jms.JMSException;
 

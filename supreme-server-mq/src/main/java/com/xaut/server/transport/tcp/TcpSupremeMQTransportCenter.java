@@ -1,9 +1,9 @@
 package com.xaut.server.transport.tcp;
 
 
+import com.xaut.common.message.bean.SupremeMQMessage;
 import com.xaut.server.manager.SupremeMQConsumerManager;
 import com.xaut.server.manager.SupremeMQMessageManager;
-import com.xaut.server.message.bean.SupremeMQMessage;
 import com.xaut.server.transport.SupremeMQServerTransport;
 import com.xaut.server.transport.SupremeMQTransprotCenter;
 import org.slf4j.Logger;

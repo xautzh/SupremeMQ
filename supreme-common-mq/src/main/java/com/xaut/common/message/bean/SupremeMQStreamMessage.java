@@ -1,22 +1,14 @@
-package com.xaut.server.message.bean;
+package com.xaut.common.message.bean;
 
-import com.xaut.server.message.Message;
 
-import javax.jms.BytesMessage;
+
+import com.xaut.common.message.Message;
+
 import javax.jms.JMSException;
+import javax.jms.StreamMessage;
 
-public class SupremeMQBytesMessage extends Message implements BytesMessage {
-
-    private static final long serialVersionUID = -8641306528891219928L;
-
-    public SupremeMQBytesMessage() {
-        super();
-    }
-
-    @Override
-    public long getBodyLength() throws JMSException {
-        return 0;
-    }
+public class SupremeMQStreamMessage extends Message implements StreamMessage {
+    private static final long serialVersionUID = 3978761567118765982L;
 
     @Override
     public boolean readBoolean() throws JMSException {
@@ -29,17 +21,7 @@ public class SupremeMQBytesMessage extends Message implements BytesMessage {
     }
 
     @Override
-    public int readUnsignedByte() throws JMSException {
-        return 0;
-    }
-
-    @Override
     public short readShort() throws JMSException {
-        return 0;
-    }
-
-    @Override
-    public int readUnsignedShort() throws JMSException {
         return 0;
     }
 
@@ -69,7 +51,7 @@ public class SupremeMQBytesMessage extends Message implements BytesMessage {
     }
 
     @Override
-    public String readUTF() throws JMSException {
+    public String readString() throws JMSException {
         return null;
     }
 
@@ -79,8 +61,8 @@ public class SupremeMQBytesMessage extends Message implements BytesMessage {
     }
 
     @Override
-    public int readBytes(byte[] bytes, int i) throws JMSException {
-        return 0;
+    public Object readObject() throws JMSException {
+        return null;
     }
 
     @Override
@@ -124,7 +106,7 @@ public class SupremeMQBytesMessage extends Message implements BytesMessage {
     }
 
     @Override
-    public void writeUTF(String s) throws JMSException {
+    public void writeString(String s) throws JMSException {
 
     }
 
