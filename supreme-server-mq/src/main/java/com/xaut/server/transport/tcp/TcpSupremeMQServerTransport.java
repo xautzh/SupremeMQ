@@ -17,7 +17,7 @@ public class TcpSupremeMQServerTransport implements SupremeMQServerTransport {
 
     private Socket socket;
 
-    private final TcpSupremeMQTransportCenter tcpSupremeMQTransportCenter;
+//    private final TcpSupremeMQTransportCenter tcpSupremeMQTransportCenter;
     //发送消息的队列
     private BlockingQueue<Message> sendMessageQueue = new LinkedBlockingQueue<>();
     //接收消息队列
@@ -29,18 +29,18 @@ public class TcpSupremeMQServerTransport implements SupremeMQServerTransport {
 
     private AtomicBoolean isClosed = new AtomicBoolean(false);
 
-    private byte[] objectByte = new byte[Message.OBJECT_BYTE_SIZE];
+//    private byte[] objectByte = new byte[Message.OBJECT_BYTE_SIZE];
 
     private Logger logger = LoggerFactory.getLogger(TcpSupremeMQServerTransport.class);
 
-    public TcpSupremeMQServerTransport(Socket socket, TcpSupremeMQTransportCenter tcpSupremeMQTransportCenter) {
+    public TcpSupremeMQServerTransport(Socket socket) {
         if (socket == null) {
             logger.error("Socket对象不能为空！");
             throw new IllegalArgumentException("Socket不能为空！");
         }
 
         this.socket = socket;
-        this.tcpSupremeMQTransportCenter = tcpSupremeMQTransportCenter;
+//        this.tcpSupremeMQTransportCenter = tcpSupremeMQTransportCenter;
     }
 
     /**
@@ -85,28 +85,21 @@ public class TcpSupremeMQServerTransport implements SupremeMQServerTransport {
                 return;
             }
             isClosed.set(true);
-
             logger.debug("TcpSugarMQServerTransport即将被关闭！");
-
             if (sendMessageThread != null && Thread.State.TERMINATED != sendMessageThread.getState()) {
                 sendMessageThread.interrupt();
             }
-
             if (receiveMessageThread != null && Thread.State.TERMINATED != receiveMessageThread.getState()) {
                 receiveMessageThread.interrupt();
             }
-
             try {
                 socket.close();
             } catch (IOException e) {
                 logger.info("Socket关闭异常", e);
             }
-
             sendMessageQueue.clear();
             receiveMessageQueue.clear();
-
-            tcpSupremeMQTransportCenter.remove(this);
-
+//            tcpSupremeMQTransportCenter.remove(this);
             logger.debug("TcpSugarMQServerTransport已被关闭！");
         }
 
@@ -131,11 +124,12 @@ public class TcpSupremeMQServerTransport implements SupremeMQServerTransport {
             Message message = null;
             Object receiveMessageObject = null;
             while (!Thread.currentThread().isInterrupted() && !socket.isClosed() && !socket.isInputShutdown()) {
-                int byteNum = socket.getInputStream().read(objectByte);
-                if (byteNum <= 0) {
-                    continue;
-                }
-                objectInputStream = new ObjectInputStream(new ByteArrayInputStream(objectByte, 0, byteNum));
+//                int byteNum = socket.getInputStream().read(objectByte);
+//                if (byteNum <= 0) {
+//                    continue;
+//                }
+//                objectInputStream = new ObjectInputStream(new ByteArrayInputStream(objectByte, 0, byteNum));
+                objectInputStream = new ObjectInputStream(new BufferedInputStream(socket.getInputStream()));
                 receiveMessageObject = objectInputStream.readObject();
 
                 if (receiveMessageObject == null) {
@@ -161,8 +155,8 @@ public class TcpSupremeMQServerTransport implements SupremeMQServerTransport {
      * 向socket中发送消息
      */
     private void sendMessage() {
-        javax.jms.Message message = null;
-        ByteArrayOutputStream byteArrayOutputStream = null;
+        Message message = null;
+//        ByteArrayOutputStream byteArrayOutputStream = null;
         ObjectOutputStream objectOutputStream = null;
         while (true) {
             try {
@@ -177,8 +171,8 @@ public class TcpSupremeMQServerTransport implements SupremeMQServerTransport {
                     && !socket.isOutputShutdown()) {
 
                 try {
-                    byteArrayOutputStream = new ByteArrayOutputStream();
-                    objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
+//                    byteArrayOutputStream = new ByteArrayOutputStream();
+                    objectOutputStream = new ObjectOutputStream(new BufferedOutputStream(socket.getOutputStream()));
                     objectOutputStream.writeObject(message);
                     objectOutputStream.flush();
                     logger.debug("消息发送完毕【{}】", message);
@@ -189,16 +183,7 @@ public class TcpSupremeMQServerTransport implements SupremeMQServerTransport {
                         try {
                             objectOutputStream.close();
                         } catch (IOException e) {
-                            logger.error("关闭objectOutputStream失败");
-                            e.printStackTrace();
-                        }
-                    }
-
-                    if (byteArrayOutputStream != null) {
-                        try {
-                            byteArrayOutputStream.close();
-                        } catch (IOException e) {
-                            logger.error("关闭byteArrayOutputStream失败");
+                            logger.error("关闭objectOutputStream失败{}");
                             e.printStackTrace();
                         }
                     }

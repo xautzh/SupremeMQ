@@ -15,6 +15,11 @@ import org.slf4j.LoggerFactory;
 import javax.jms.JMSException;
 import java.util.concurrent.BlockingQueue;
 
+/**
+ * 消息目的地分发器
+ * 每个Transprot连接器配置一个该分发器来分发消息到目的地
+ */
+
 public class SupremeMQDestinationDispatcher {
     //实现主要用于生产者-使用者队列，BlockingQueue 实现是线程安全的。
     // 所有排队方法都可以使用内部锁或其他形式的并发控制来自动达到它们的目的

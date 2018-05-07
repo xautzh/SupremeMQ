@@ -62,7 +62,8 @@ public class TcpSupremeMQTransportCenter implements SupremeMQTransprotCenter {
         while (true) {
             try {
                 socket = serverSocket.accept();
-                tcpSupremeMQServerTransport = new TcpSupremeMQServerTransport(socket, this);
+                tcpSupremeMQServerTransport = new TcpSupremeMQServerTransport(socket);
+                logger.debug("新的客户端【{}】",socket);
                 //Dispatcher
                 destinationDispatcher = new SupremeMQDestinationDispatcher(
                         tcpSupremeMQServerTransport.getReceiveMessageQueue(),
@@ -89,7 +90,6 @@ public class TcpSupremeMQTransportCenter implements SupremeMQTransprotCenter {
             entry.getKey().close();
             entry.getValue().stop();
         }
-
         try {
             serverSocket.close();
         } catch (IOException e) {
@@ -101,16 +101,24 @@ public class TcpSupremeMQTransportCenter implements SupremeMQTransprotCenter {
 
     @Override
     public void remove(SupremeMQServerTransport supremeMQServerTransport) {
-
+        supremeMQServerTransport.close();
     }
 
     @Override
     public void setSupremeConsumerManager(SupremeMQConsumerManager supremeConsumerManager) {
-
+        this.supremeMQConsumerManager = supremeConsumerManager;
     }
 
     @Override
     public void setSupremeMessageManager(SupremeMQMessageManager supremeMessageManager) {
+        this.supremeMQMessageManager = supremeMessageManager;
+    }
 
+    public ConcurrentHashMap<TcpSupremeMQServerTransport, SupremeMQDestinationDispatcher> getTransportMap() {
+        return transportMap;
+    }
+
+    public void setTransportMap(ConcurrentHashMap<TcpSupremeMQServerTransport, SupremeMQDestinationDispatcher> transportMap) {
+        this.transportMap = transportMap;
     }
 }

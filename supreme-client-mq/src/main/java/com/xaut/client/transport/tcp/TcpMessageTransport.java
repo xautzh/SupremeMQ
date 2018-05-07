@@ -108,11 +108,21 @@ public class TcpMessageTransport extends SupremeMQTransport {
 
     }
 
+    /**
+     * 获取接收消息的队列
+     *
+     * @return
+     */
     @Override
     public BlockingQueue<Message> getReceiveMessageQueue() {
         return receiveMessageQueue;
     }
 
+    /**
+     * 获取发送消息的队列
+     *
+     * @return
+     */
     @Override
     public BlockingQueue<Message> getSendMessageQueue() {
         return sendMessageQueue;
@@ -123,7 +133,7 @@ public class TcpMessageTransport extends SupremeMQTransport {
      */
     private void sendMessage() {
         Message message = null;
-        ByteArrayOutputStream byteArrayOutputStream = null;
+//        ByteArrayOutputStream byteArrayOutputStream = null;
         ObjectOutputStream objectOutputStream = null;
         while (true) {
             try {
@@ -138,8 +148,8 @@ public class TcpMessageTransport extends SupremeMQTransport {
                     && !socket.isOutputShutdown()) {
 
                 try {
-                    byteArrayOutputStream = new ByteArrayOutputStream();
-                    objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
+//                    byteArrayOutputStream = new ByteArrayOutputStream();
+                    objectOutputStream = new ObjectOutputStream(new BufferedOutputStream(socket.getOutputStream()));
                     objectOutputStream.writeObject(message);
                     objectOutputStream.flush();
                     logger.debug("消息发送完毕【{}】", message);
@@ -154,15 +164,14 @@ public class TcpMessageTransport extends SupremeMQTransport {
                             e.printStackTrace();
                         }
                     }
-
-                    if (byteArrayOutputStream != null) {
-                        try {
-                            byteArrayOutputStream.close();
-                        } catch (IOException e) {
-                            logger.error("关闭byteArrayOutputStream失败");
-                            e.printStackTrace();
-                        }
-                    }
+//                    if (byteArrayOutputStream != null) {
+//                        try {
+//                            byteArrayOutputStream.close();
+//                        } catch (IOException e) {
+//                            logger.error("关闭byteArrayOutputStream失败");
+//                            e.printStackTrace();
+//                        }
+//                    }
                 }
             }
         }
@@ -184,7 +193,8 @@ public class TcpMessageTransport extends SupremeMQTransport {
                 if (byteNum <= 0) {
                     continue;
                 }
-                objectInputStream = new ObjectInputStream(new ByteArrayInputStream(objectByte, 0, byteNum));
+//                objectInputStream = new ObjectInputStream(new ByteArrayInputStream(objectByte, 0, byteNum));
+                objectInputStream = new ObjectInputStream(new BufferedInputStream(socket.getInputStream()));
                 try {
                     receiveMessageObject = objectInputStream.readObject();
                     logger.debug("读取的消息为【{}】", receiveMessageObject);

@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
- * 消费者消息分发器
+ * 消费者 消息分发器
  * 每个消息队列配置一个
  */
 

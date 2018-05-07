@@ -37,7 +37,7 @@ public class SupremeMQServerManager {
 
     public void start() throws JMSException {
         if (START_STATUS.get()) {
-            logger.info("Sugar已经成功启动！");
+            logger.info("Supreme已经成功启动！");
             return;
         }
         //连接池初始化

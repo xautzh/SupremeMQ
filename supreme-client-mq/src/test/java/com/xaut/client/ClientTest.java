@@ -6,6 +6,8 @@ import com.xaut.common.message.SupremeMQDestination;
 import org.junit.Test;
 
 import javax.jms.*;
+import java.net.InetAddress;
+import java.net.Socket;
 
 public class ClientTest {
     @Test
@@ -37,5 +39,10 @@ public class ClientTest {
                 }
             }
         });
+    }
+    @Test
+    public void client() throws JMSException {
+        SupremeMQConnectionFactory factory = new SupremeMQConnectionFactory("tcp://127.0.0.1:9090");
+        Connection connection = factory.createConnection();
     }
 }
