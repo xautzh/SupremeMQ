@@ -64,6 +64,7 @@ public class TcpMessageTransport extends SupremeMQTransport {
                                 receiveMessage();
                             }
                         });
+                receiveMessageThread.start();
             } else {
                 logger.debug("Socket未连接，TcpMessageTransport开启消息接收线程失败！");
             }
@@ -82,6 +83,7 @@ public class TcpMessageTransport extends SupremeMQTransport {
                             }
                         }
                 );
+                sendMessageThread.start();
             } else {
                 logger.debug("Socket未连接，TcpMessageTransport开启消息发送线程失败！");
             }

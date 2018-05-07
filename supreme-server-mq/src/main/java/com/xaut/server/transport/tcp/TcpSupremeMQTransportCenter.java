@@ -9,7 +9,6 @@ import com.xaut.server.transport.SupremeMQTransprotCenter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
 import javax.jms.JMSException;
 import java.io.IOException;
@@ -18,6 +17,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
 public class TcpSupremeMQTransportCenter implements SupremeMQTransprotCenter {
 
     private InetAddress inetAddress;
@@ -31,8 +31,8 @@ public class TcpSupremeMQTransportCenter implements SupremeMQTransprotCenter {
 
     private SupremeMQMessageManager supremeMQMessageManager;
 
-    private ConcurrentHashMap<TcpSupremeMQServerTransport,SupremeMQDestinationDispatcher>
-    transportMap = new ConcurrentHashMap<>();
+    private ConcurrentHashMap<TcpSupremeMQServerTransport, SupremeMQDestinationDispatcher>
+            transportMap = new ConcurrentHashMap<>();
 
 
     private Logger logger = LoggerFactory.getLogger(TcpSupremeMQTransportCenter.class);
@@ -73,7 +73,7 @@ public class TcpSupremeMQTransportCenter implements SupremeMQTransprotCenter {
                 //Dispatcher.start()
                 destinationDispatcher.start();
                 //map.put(tcpSupremeMQServerTransport,Dispatcher)
-                transportMap.put(tcpSupremeMQServerTransport,destinationDispatcher);
+                transportMap.put(tcpSupremeMQServerTransport, destinationDispatcher);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -85,7 +85,7 @@ public class TcpSupremeMQTransportCenter implements SupremeMQTransprotCenter {
     @Override
     public void close() throws JMSException {
         logger.info("TcpSugarMQTransprotCenter正在关闭... ...");
-        for(Map.Entry<TcpSupremeMQServerTransport, SupremeMQDestinationDispatcher> entry : transportMap.entrySet()) {
+        for (Map.Entry<TcpSupremeMQServerTransport, SupremeMQDestinationDispatcher> entry : transportMap.entrySet()) {
             entry.getKey().close();
             entry.getValue().stop();
         }
