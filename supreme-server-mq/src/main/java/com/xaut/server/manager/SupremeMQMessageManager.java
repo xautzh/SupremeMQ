@@ -46,7 +46,7 @@ public class SupremeMQMessageManager {
         if (destination instanceof Queue) {
             logger.debug("队列消息【{}】", message);
             String name = ((Queue) destination).getQueueName();
-            SupremeMQMessageContainer queue = putSupremeMQMessageContainer(name);
+            SupremeMQMessageContainer queue = getSupremeMQMessageContainer(name);
             if (messageContainerMap.size() >= MAX_QUEUE_NUM) {
                 logger.warn("队列已满，添加失败：【{}】", name);
                 throw new JMSException("队列已满，添加失败：【{}】", name);
@@ -112,7 +112,7 @@ public class SupremeMQMessageManager {
      * @param name
      * @return
      */
-    public SupremeMQMessageContainer putSupremeMQMessageContainer(String name) {
+    public SupremeMQMessageContainer getSupremeMQMessageContainer(String name) {
         SupremeMQMessageContainer queue = messageContainerMap.putIfAbsent(name,
                 new SupremeMQMessageContainer(name, MessageContainerType.QUEUE.getValue()));
         if (queue == null) {
@@ -120,4 +120,15 @@ public class SupremeMQMessageManager {
         }
         return queue;
     }
+
+//    public Destination getSupremeMQMessageContainer(String name) {
+//        SupremeMQMessageContainer queue = messageContainerMap.putIfAbsent(name, new SupremeMQMessageContainer(name,
+//                MessageContainerType.QUEUE.getValue()));
+//
+//        if(queue == null) {
+//            queue = messageContainerMap.get(name);
+//        }
+//
+//        return queue;
+//    }
 }

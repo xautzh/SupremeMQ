@@ -2,12 +2,13 @@ package com.xaut.server.queue;
 
 
 
+import com.xaut.common.message.Message;
 import com.xaut.common.message.SupremeMQDestination;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.jms.JMSException;
-import javax.jms.Message;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
