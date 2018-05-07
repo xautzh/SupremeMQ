@@ -9,7 +9,7 @@ import javax.jms.JMSException;
 public interface SupremeMQTransprotCenter {
     void start() throws JMSException;
 
-    void close();
+    void close() throws JMSException;
 
     void remove(SupremeMQServerTransport supremeMQServerTransport);
 

@@ -13,6 +13,7 @@ import com.xaut.server.queue.SupremeMQMessageContainer;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import javax.jms.JMSException;
 import java.util.Date;
@@ -26,6 +27,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 /**
  * 消费者管理器
  */
+@Component
 public class SupremeMQConsumerManager {
     //key-消费者id value-SupremeMQServerTransport的sendMessageQueue
     private ConcurrentHashMap<String, BlockingQueue<Message>> consumerMap =

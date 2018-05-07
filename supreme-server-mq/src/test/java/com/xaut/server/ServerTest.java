@@ -16,4 +16,9 @@ public class ServerTest {
         //启动消息中间件服务器
         supremeMQServerManager.start();
     }
+    @Test
+    public void server() throws JMSException {
+        SupremeMQServerManager supremeMQServerManager = new SupremeMQServerManager();
+        supremeMQServerManager.start();
+    }
 }

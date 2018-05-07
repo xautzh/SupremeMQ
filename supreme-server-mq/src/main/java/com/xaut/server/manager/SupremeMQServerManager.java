@@ -22,7 +22,6 @@ public class SupremeMQServerManager {
 
     private AtomicBoolean START_STATUS = new AtomicBoolean();
 
-    @Autowired
     private SupremeMQTransprotCenter supremeMQTransprotCenter;
     @Autowired
     private SupremeMQConsumerManager supremeMQConsumerManager;
@@ -56,7 +55,7 @@ public class SupremeMQServerManager {
             }
         }).start();
         START_STATUS.set(true);
-        logger.info("Sugar启动完毕:{}", url);
+        logger.info("Supreme启动完毕:{}", url);
     }
 
     public String getUrl() {
