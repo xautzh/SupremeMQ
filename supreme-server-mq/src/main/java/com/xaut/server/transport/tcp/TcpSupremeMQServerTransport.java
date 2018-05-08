@@ -61,6 +61,7 @@ public class TcpSupremeMQServerTransport implements SupremeMQServerTransport {
         //消息接收线程
         if (!socket.isInputShutdown()) {
             receiveMessageThread = new Thread(this::receiveMessage);
+            logger.debug("服务端消息接收线程启动");
             receiveMessageThread.start();
         } else {
             logger.debug("Socket未连接，TcpSupremeMQServerTransport开启消息接收线程失败！");
@@ -68,6 +69,7 @@ public class TcpSupremeMQServerTransport implements SupremeMQServerTransport {
         //消息发送线程
         if (!socket.isOutputShutdown()) {
             sendMessageThread = new Thread(this::sendMessage);
+            logger.debug("服务端消息发送线程启动");
             sendMessageThread.start();
         } else {
             logger.debug("Socket未连接，TcpSugarMQServerTransport开启消息发送线程失败！");
