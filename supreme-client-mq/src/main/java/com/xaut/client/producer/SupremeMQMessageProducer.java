@@ -3,6 +3,7 @@ package com.xaut.client.producer;
 import com.xaut.client.transport.MessageDispatcher;
 import com.xaut.common.constant.MessageProperty;
 import com.xaut.common.constant.MessageType;
+import com.xaut.common.message.bean.SupremeMQMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -110,7 +111,7 @@ public class SupremeMQMessageProducer implements MessageProducer {
         message.setJMSType(MessageType.PRODUCER_MESSAGE.getValue()); // 设置消息类型
         message.setJMSDestination(destination);
         message.setBooleanProperty(MessageProperty.DISABLE_MESSAGE_ID.getKey(), disableMessageId.get());
-        messageDispatcher.sendMessage(message);
+        messageDispatcher.sendMessage((SupremeMQMessage)message);
 
     }
 

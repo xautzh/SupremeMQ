@@ -3,6 +3,7 @@ package com.xaut.client.consumer;
 import com.xaut.common.constant.ConsumerState;
 import com.xaut.common.constant.MessageProperty;
 import com.xaut.common.constant.MessageType;
+import com.xaut.common.message.Message;
 import com.xaut.common.message.bean.SupremeMQMessage;
 import com.xaut.common.utils.MessageIdUtils;
 import org.slf4j.Logger;
@@ -169,7 +170,10 @@ public class SupremeMQMessageConsumer implements MessageConsumer {
      * 开启一个消费者
      */
     public void start() {
-
+        //消息消费线程启动
+        new Thread(consumeMessageTask).start();
+        //消息应答线程启动
+        new Thread(ackMessageTask).start();
     }
 
     /**

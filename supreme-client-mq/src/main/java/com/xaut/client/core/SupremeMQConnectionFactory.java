@@ -46,7 +46,7 @@ public class SupremeMQConnectionFactory implements ConnectionFactory, QueueConne
     @Override
     public Connection createConnection() throws JMSException {
         //创建连接
-        return new SuprmeMQConnection(supremeMQTransport);
+        return new SupremeMQConnection(supremeMQTransport);
     }
 
     @Override

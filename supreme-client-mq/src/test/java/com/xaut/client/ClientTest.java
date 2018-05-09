@@ -2,7 +2,9 @@ package com.xaut.client;
 
 import com.xaut.client.core.SupremeMQConnectionFactory;
 import com.xaut.common.constant.MessageContainerType;
+import com.xaut.common.constant.MessageType;
 import com.xaut.common.message.SupremeMQDestination;
+import com.xaut.common.message.bean.SupremeMQTextMessage;
 import org.junit.Test;
 
 import javax.jms.*;
@@ -44,5 +46,19 @@ public class ClientTest {
     public void client() throws JMSException {
         SupremeMQConnectionFactory factory = new SupremeMQConnectionFactory("tcp://127.0.0.1:9090");
         Connection connection = factory.createConnection();
+        Queue queue = new SupremeMQDestination("supreme", MessageContainerType.QUEUE.getValue());
+        Session session = connection.createSession(false,Session.AUTO_ACKNOWLEDGE);
+        MessageConsumer consumer = session.createConsumer(queue);
+        consumer.setMessageListener(message -> {
+            try {
+                System.out.println("consumer"+((SupremeMQTextMessage)message).getText());
+            } catch (JMSException e) {
+                e.printStackTrace();
+            }
+        });
+        MessageProducer producer = session.createProducer(queue);
+        TextMessage textMessage = session.createTextMessage();
+        textMessage.setText("hello");
+        producer.send(textMessage);
     }
 }
