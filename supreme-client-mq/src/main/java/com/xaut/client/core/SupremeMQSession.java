@@ -1,18 +1,41 @@
 package com.xaut.client.core;
 
+import com.xaut.client.consumer.SupremeMQMessageConsumer;
 import com.xaut.client.producer.SupremeMQMessageProducer;
 import com.xaut.client.transport.MessageDispatcher;
+import com.xaut.common.constant.MessageProperty;
 import com.xaut.common.message.SupremeMQDestination;
+import com.xaut.common.message.bean.SupremeMQTextMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.jms.*;
 import java.io.Serializable;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-public class SupremeMQSession implements Session{
+public class SupremeMQSession implements Session {
+    private String sessionId;
+    private boolean transacted;
+    private AtomicBoolean isStarted = new AtomicBoolean(false);
     private MessageDispatcher messageDispatcher;
-
+    //key-消费者id value-消费对象
+    private ConcurrentHashMap<String, SupremeMQMessageConsumer> consumerMap
+            = new ConcurrentHashMap<>();
     private Logger logger = LoggerFactory.getLogger(SupremeMQSession.class);
+
+    public SupremeMQSession(String sessionId, boolean transacted, MessageDispatcher messageDispatcher) {
+        this.sessionId = sessionId;
+        this.transacted = transacted;
+        this.messageDispatcher = messageDispatcher;
+    }
+
+    public void start() {
+        for (SupremeMQMessageConsumer supremeMQMessageConsumer : consumerMap.values()) {
+            supremeMQMessageConsumer.start();
+        }
+    }
+
     @Override
     public BytesMessage createBytesMessage() throws JMSException {
         return null;
@@ -45,12 +68,15 @@ public class SupremeMQSession implements Session{
 
     @Override
     public TextMessage createTextMessage() throws JMSException {
-        return null;
+        SupremeMQTextMessage supremeMQTextMessage = new SupremeMQTextMessage();
+        return supremeMQTextMessage;
     }
 
     @Override
-    public TextMessage createTextMessage(String s) throws JMSException {
-        return null;
+    public TextMessage createTextMessage(String message) throws JMSException {
+        SupremeMQTextMessage supremeMQTextMessage = new SupremeMQTextMessage(message);
+        supremeMQTextMessage.setStringProperty(MessageProperty.SESSION_ID.getKey(), sessionId);
+        return supremeMQTextMessage;
     }
 
     @Override
@@ -100,6 +126,7 @@ public class SupremeMQSession implements Session{
 
     /**
      * 创建生产者
+     *
      * @param destination
      * @return
      * @throws JMSException
@@ -107,7 +134,7 @@ public class SupremeMQSession implements Session{
 
     @Override
     public MessageProducer createProducer(Destination destination) throws JMSException {
-        if(!(destination instanceof SupremeMQDestination)) {
+        if (!(destination instanceof SupremeMQDestination)) {
             logger.warn("传入的Destination非法！");
             throw new JMSException("传入的Destination非法！");
         }
@@ -118,6 +145,7 @@ public class SupremeMQSession implements Session{
 
     /**
      * 创建消费者
+     *
      * @param destination
      * @return
      * @throws JMSException
@@ -125,7 +153,16 @@ public class SupremeMQSession implements Session{
 
     @Override
     public MessageConsumer createConsumer(Destination destination) throws JMSException {
-        return null;
+        if (!(destination instanceof SupremeMQDestination)) {
+            logger.warn("传入的Destination非法！");
+            throw new JMSException("传入的Destination非法:" + destination);
+        }
+        SupremeMQMessageConsumer supremeQueueReceiver = new SupremeMQMessageConsumer(
+                destination, messageDispatcher.getSendMessageQueue(), 10
+        );
+        messageDispatcher.addConsumer(supremeQueueReceiver);
+        consumerMap.put(supremeQueueReceiver.getConsumerId(), supremeQueueReceiver);
+        return supremeQueueReceiver;
     }
 
     @Override

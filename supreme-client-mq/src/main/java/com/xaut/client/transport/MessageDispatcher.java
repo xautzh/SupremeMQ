@@ -5,6 +5,7 @@ import com.xaut.common.constant.MessageProperty;
 import com.xaut.common.constant.MessageType;
 import com.xaut.common.message.bean.SupremeMQMessage;
 import com.xaut.common.utils.DateUtils;
+import com.xaut.common.utils.MessageIdUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,10 +15,7 @@ import javax.jms.Message;
 import javax.jms.MessageConsumer;
 import java.util.Date;
 import java.util.Random;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
@@ -54,8 +52,133 @@ public class MessageDispatcher {
         this.sendMessageQueue = sendMessageQueue;
     }
 
-    public void sendMessage(Message message) {
+    /**
+     * 开始工作
+     */
+    public void start() {
+        synchronized (isStarted) {
+            if (isStarted.get()) {
+                logger.info("MessageDispatcher已经启动......");
+            }
+            logger.info("MessageDispatcher准备开始工作... ...");
+            threadPoolExecutor = (ThreadPoolExecutor) Executors.newCachedThreadPool();
+            dispatcherThread = new Thread(() -> {
+                Message message = null;
+                while (!Thread.currentThread().isInterrupted()) {
+                    try {
+                        message = receiveMessageQueue.take();
 
+                    } catch (InterruptedException e) {
+                        logger.info("MessageDispatcher被中断，即将退出.");
+                        break;
+                    }
+                    logger.debug("开始处理消息【{}】", message);
+
+                    try {
+                        //生产者 应答消息
+                        if (MessageType.PRODUCER_ACKNOWLEDGE_MESSAGE.getValue().equals(message.getJMSType())) {
+                            logger.debug("客户端接收到服务端的生产者应答消息:{}", message);
+                            CountDownLatch countDownLatch = messageAckMap.get(message.getJMSMessageID());
+                            if (countDownLatch != null) {
+                                countDownLatch.countDown();
+                                messageAckMap.remove(message.getJMSMessageID());
+                            }
+                        }
+                        //要分配给消费者的消息
+                        else if (MessageType.PRODUCER_MESSAGE.getValue().equals(message.getJMSType())) {
+                            logger.debug("客户端接收到要分配给消费者的消息:{}", message);
+                            String consumerId = message.getStringProperty(MessageProperty.CUSTOMER_ID.getKey());
+                            if (StringUtils.isBlank(consumerId)) {
+                                logger.error("客户端接收到生产者发来的消息中消费者ID为空，分配消息到消费者失败:{}", message);
+                                continue;
+                            }
+                            //放入制定消费者队列中
+                            SupremeMQMessageConsumer supremeMQMessageConsumer = consumerMap.get(consumerId);
+                            supremeMQMessageConsumer.putMessage(message);
+
+                        }
+                        //消费者注册 应答消息
+                        else if (MessageType.CUSTOMER_REGISTER_ACKNOWLEDGE_MESSAGE.getValue().equals(message.getJMSType())) {
+                            logger.debug("客户端接收到服务器发来的发来消费者注册应答消息:{}", message);
+                            String customerId = message.getStringProperty(MessageProperty.CUSTOMER_ID.getKey());
+                            String customerClientId = message.getStringProperty(MessageProperty.CUSTOMER_CLIENT_ID.getKey());
+                            if (StringUtils.isBlank(customerId) || StringUtils.isBlank(customerClientId)) {
+                                logger.error("消费者注册应答消息数据不完整，处理失败【{}】", message);
+                            }
+                            DataCountDownLatch<Message> countDownLatch = addConsumerAckMap.get(customerClientId);
+                            countDownLatch.setData(message);
+                            countDownLatch.countDown();
+                        } else {
+                            logger.error("未知消息类型，无法处理【{}】", message);
+                        }
+                    } catch (JMSException e) {
+                        logger.error("SugarMQQueueDispatcher消息处理失败:【{}】", message, e);
+                    }
+
+                }
+            });
+            dispatcherThread.start();
+
+            logger.info("MessageDispatcher已经开始工作");
+
+            isStarted.set(true);
+        }
+    }
+
+    /**
+     * 关闭消息分发器
+     */
+    public void closed(){
+        synchronized (isClosed) {
+            if(isClosed.get()) {
+                return ;
+            } else {
+                isClosed.set(true);
+            }
+        }
+
+        logger.info("MessageDispatcher即将关闭... ...");
+
+        if(threadPoolExecutor != null) {
+            threadPoolExecutor.shutdown();
+        }
+
+        if(dispatcherThread != null) {
+            dispatcherThread.interrupt();
+        }
+
+        logger.info("MessageDispatcher已经关闭！");
+    }
+
+    /**
+     * 同步发送生产者消息
+     *
+     * @param message 消息
+     * @throws JMSException
+     */
+
+    public void sendMessage(Message message) throws JMSException {
+        if (message == null) {
+            throw new IllegalArgumentException("Message不能为空！");
+        }
+
+        if (!isStarted.get()) {
+            logger.error("MessageDispatcher还未启动，消息发送失败：【{}】", message);
+        }
+
+        String messageId = MessageIdUtils.getNewMessageId();
+        message.setJMSMessageID(messageId);
+        CountDownLatch countDownLatch = new CountDownLatch(1);
+        messageAckMap.put(messageId, countDownLatch);
+
+        try {
+            sendMessageQueue.put(message);
+            countDownLatch.await();
+            messageAckMap.remove(messageId);
+        } catch (InterruptedException e) {
+            logger.error("SugarMQMessageProducer消息发送被中断！");
+            throw new JMSException("SugarMQMessageProducer消息发送被中断:" + e.getMessage());
+        }
 
     }
 
@@ -96,6 +219,10 @@ public class MessageDispatcher {
 
         logger.info("成功注册了一个消费者：{}", messageConsumer);
 
+    }
+
+    public BlockingQueue<Message> getSendMessageQueue() {
+        return sendMessageQueue;
     }
 
     /**

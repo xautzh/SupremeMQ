@@ -166,6 +166,13 @@ public class SupremeMQMessageConsumer implements MessageConsumer {
     }
 
     /**
+     * 开启一个消费者
+     */
+    public void start() {
+
+    }
+
+    /**
      * 消息消费线程
      */
     class ConsumeMessageTask implements Runnable {
