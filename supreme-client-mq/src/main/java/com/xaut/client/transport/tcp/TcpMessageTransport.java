@@ -1,11 +1,12 @@
 package com.xaut.client.transport.tcp;
 
 import com.xaut.client.transport.SupremeMQTransport;
-import com.xaut.common.message.Message;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.jms.JMSException;
+import javax.jms.Message;
 import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
@@ -29,7 +30,7 @@ public class TcpMessageTransport extends SupremeMQTransport {
     //发消息线程
     private Thread sendMessageThread;
 
-    private byte[] objectByte = new byte[Message.OBJECT_BYTE_SIZE];
+    private byte[] objectByte = new byte[com.xaut.common.message.Message.OBJECT_BYTE_SIZE];
 
     private Logger logger = LoggerFactory.getLogger(TcpMessageTransport.class);
 

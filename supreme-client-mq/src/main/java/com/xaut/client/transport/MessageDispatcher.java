@@ -3,7 +3,7 @@ package com.xaut.client.transport;
 import com.xaut.client.consumer.SupremeMQMessageConsumer;
 import com.xaut.common.constant.MessageProperty;
 import com.xaut.common.constant.MessageType;
-import com.xaut.common.message.Message;
+
 import com.xaut.common.message.bean.SupremeMQMessage;
 import com.xaut.common.utils.DateUtils;
 import com.xaut.common.utils.MessageIdUtils;
@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.jms.JMSException;
+import javax.jms.Message;
 import javax.jms.MessageConsumer;
 import java.util.Date;
 import java.util.Random;

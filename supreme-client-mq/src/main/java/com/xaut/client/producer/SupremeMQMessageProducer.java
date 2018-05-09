@@ -3,7 +3,6 @@ package com.xaut.client.producer;
 import com.xaut.client.transport.MessageDispatcher;
 import com.xaut.common.constant.MessageProperty;
 import com.xaut.common.constant.MessageType;
-import com.xaut.common.message.bean.SupremeMQMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -98,35 +97,27 @@ public class SupremeMQMessageProducer implements MessageProducer {
 
     }
 
-    /**
-     * 发送消息
-     *
-     * @param message
-     * @throws JMSException
-     */
-
     @Override
     public void send(Message message) throws JMSException {
         logger.debug("即将发送一条消息:{}", message);
         message.setJMSType(MessageType.PRODUCER_MESSAGE.getValue()); // 设置消息类型
         message.setJMSDestination(destination);
         message.setBooleanProperty(MessageProperty.DISABLE_MESSAGE_ID.getKey(), disableMessageId.get());
-        messageDispatcher.sendMessage((SupremeMQMessage)message);
+        messageDispatcher.sendMessage(message);
+    }
+
+    @Override
+    public void send(javax.jms.Message message, int i, int i1, long l) throws JMSException {
 
     }
 
     @Override
-    public void send(Message message, int i, int i1, long l) throws JMSException {
+    public void send(Destination destination, javax.jms.Message message) throws JMSException {
 
     }
 
     @Override
-    public void send(Destination destination, Message message) throws JMSException {
-
-    }
-
-    @Override
-    public void send(Destination destination, Message message, int i, int i1, long l) throws JMSException {
+    public void send(Destination destination, javax.jms.Message message, int i, int i1, long l) throws JMSException {
 
     }
 }

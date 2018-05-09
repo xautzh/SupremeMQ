@@ -3,7 +3,6 @@ package com.xaut.client.consumer;
 import com.xaut.common.constant.ConsumerState;
 import com.xaut.common.constant.MessageProperty;
 import com.xaut.common.constant.MessageType;
-import com.xaut.common.message.Message;
 import com.xaut.common.message.bean.SupremeMQMessage;
 import com.xaut.common.utils.MessageIdUtils;
 import org.slf4j.Logger;

@@ -2,14 +2,11 @@ package com.xaut.client;
 
 import com.xaut.client.core.SupremeMQConnectionFactory;
 import com.xaut.common.constant.MessageContainerType;
-import com.xaut.common.constant.MessageType;
 import com.xaut.common.message.SupremeMQDestination;
 import com.xaut.common.message.bean.SupremeMQTextMessage;
 import org.junit.Test;
 
 import javax.jms.*;
-import java.net.InetAddress;
-import java.net.Socket;
 
 public class ClientTest {
     @Test
@@ -31,34 +28,36 @@ public class ClientTest {
         //7. MessageConsumer由会话创建，用于接收发送到目标的消息
         MessageConsumer consumer = session.createConsumer(queue);
         //8.消息监听
-        consumer.setMessageListener(new MessageListener(){
+        consumer.setMessageListener(new MessageListener() {
             @Override
             public void onMessage(javax.jms.Message message) {
                 try {
-                    System.out.println("consumer+"+((TextMessage)message).getText());
+                    System.out.println("consumer+" + ((TextMessage) message).getText());
                 } catch (JMSException e) {
                     e.printStackTrace();
                 }
             }
         });
     }
+
     @Test
     public void client() throws JMSException {
         SupremeMQConnectionFactory factory = new SupremeMQConnectionFactory("tcp://127.0.0.1:9090");
         Connection connection = factory.createConnection();
+        connection.start();
         Queue queue = new SupremeMQDestination("supreme", MessageContainerType.QUEUE.getValue());
-        Session session = connection.createSession(false,Session.AUTO_ACKNOWLEDGE);
+        Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+        MessageProducer producer = session.createProducer(queue);
+        SupremeMQTextMessage textMessage = (SupremeMQTextMessage) session.createTextMessage();
+        textMessage.setText("hello");
+        producer.send(textMessage);
         MessageConsumer consumer = session.createConsumer(queue);
         consumer.setMessageListener(message -> {
             try {
-                System.out.println("consumer"+((SupremeMQTextMessage)message).getText());
+                System.out.println("consumer" + ((SupremeMQTextMessage) message).getText());
             } catch (JMSException e) {
                 e.printStackTrace();
             }
         });
-        MessageProducer producer = session.createProducer(queue);
-        TextMessage textMessage = session.createTextMessage();
-        textMessage.setText("hello");
-        producer.send(textMessage);
     }
 }
