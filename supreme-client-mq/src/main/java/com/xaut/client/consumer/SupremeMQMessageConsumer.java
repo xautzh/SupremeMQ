@@ -153,6 +153,18 @@ public class SupremeMQMessageConsumer implements MessageConsumer {
         this.sendMessageQueue = sendMessageQueue;
     }
 
+    public String getConsumerId() {
+        return consumerId;
+    }
+
+    public void setConsumerId(String consumerId) {
+        this.consumerId = consumerId;
+    }
+
+    public Destination getDestination() {
+        return destination;
+    }
+
     /**
      * 消息消费线程
      */

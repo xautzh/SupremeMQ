@@ -36,12 +36,13 @@ public class SupremeMQMessageProducer implements MessageProducer {
 
     @Override
     public void setDisableMessageID(boolean b) throws JMSException {
+        this.disableMessageId.set(b);
 
     }
 
     @Override
     public boolean getDisableMessageID() throws JMSException {
-        return false;
+        return this.disableMessageId.get();
     }
 
     @Override
@@ -66,27 +67,29 @@ public class SupremeMQMessageProducer implements MessageProducer {
 
     @Override
     public void setPriority(int i) throws JMSException {
+        this.priority.set(i);
 
     }
 
     @Override
     public int getPriority() throws JMSException {
-        return 0;
+        return this.priority.get();
     }
 
     @Override
     public void setTimeToLive(long l) throws JMSException {
+        this.timeToLive.set(l);
 
     }
 
     @Override
     public long getTimeToLive() throws JMSException {
-        return 0;
+        return this.timeToLive.get();
     }
 
     @Override
     public Destination getDestination() throws JMSException {
-        return null;
+        return this.destination;
     }
 
     @Override
@@ -107,7 +110,6 @@ public class SupremeMQMessageProducer implements MessageProducer {
         message.setJMSType(MessageType.PRODUCER_MESSAGE.getValue()); // 设置消息类型
         message.setJMSDestination(destination);
         message.setBooleanProperty(MessageProperty.DISABLE_MESSAGE_ID.getKey(), disableMessageId.get());
-
         messageDispatcher.sendMessage(message);
 
     }
