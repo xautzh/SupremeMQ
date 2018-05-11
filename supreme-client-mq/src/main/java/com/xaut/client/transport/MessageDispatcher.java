@@ -231,9 +231,7 @@ public class MessageDispatcher {
      * <p>
      * 类描述：主要用于阻塞发送后返回应答消息
      *
-     * @author manzhizhen
-     * <p>
-     * 2014年12月17日
+     *
      */
     class DataCountDownLatch<T> extends CountDownLatch {
         private T data;
