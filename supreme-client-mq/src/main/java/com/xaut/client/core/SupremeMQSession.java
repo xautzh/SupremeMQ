@@ -3,6 +3,7 @@ package com.xaut.client.core;
 import com.xaut.client.consumer.SupremeMQMessageConsumer;
 import com.xaut.client.producer.SupremeMQMessageProducer;
 import com.xaut.client.transport.MessageDispatcher;
+import com.xaut.common.constant.ConsumerState;
 import com.xaut.common.constant.MessageProperty;
 import com.xaut.common.message.SupremeMQDestination;
 import com.xaut.common.message.bean.SupremeMQTextMessage;
@@ -160,6 +161,7 @@ public class SupremeMQSession implements Session {
         SupremeMQMessageConsumer supremeQueueReceiver = new SupremeMQMessageConsumer(
                 destination, messageDispatcher.getSendMessageQueue(), 10
         );
+        supremeQueueReceiver.setState(ConsumerState.WORKING.getValue());
         messageDispatcher.addConsumer(supremeQueueReceiver);
         consumerMap.put(supremeQueueReceiver.getConsumerId(), supremeQueueReceiver);
         return supremeQueueReceiver;

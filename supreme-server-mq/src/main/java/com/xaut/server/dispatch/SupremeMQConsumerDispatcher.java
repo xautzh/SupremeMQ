@@ -22,12 +22,12 @@ public class SupremeMQConsumerDispatcher {
     private static Logger logger = LoggerFactory.getLogger(SupremeMQConsumerDispatcher.class);
 
     public SupremeMQConsumerDispatcher(SupremeMQConsumerManager supremeMQConsumerManager, SupremeMQMessageContainer container) {
-        if(supremeMQCustomerManager == null) {
-            throw new IllegalArgumentException("SugarMQCustomerManager不能为空！");
+        if(supremeMQConsumerManager == null) {
+            throw new IllegalArgumentException("SupremeMQCustomerManager不能为空！");
         }
 
-        if(supremeMQMessageContainer == null) {
-            throw new IllegalArgumentException("SugarMQMessageContainer不能为空！");
+        if(container == null) {
+            throw new IllegalArgumentException("SupremeMQMessageContainer不能为空！");
         }
         this.supremeMQCustomerManager = supremeMQConsumerManager;
         this.supremeMQMessageContainer = container;

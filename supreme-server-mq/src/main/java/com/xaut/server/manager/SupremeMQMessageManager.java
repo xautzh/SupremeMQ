@@ -26,7 +26,7 @@ public class SupremeMQMessageManager {
     // 队列数量的最大值
     private @Value("${max_queue_num}")
     int MAX_QUEUE_NUM;
-    //消息队列
+    //消息队列 key消息容器名称-消息容器中的name value-消息容器
     private ConcurrentHashMap<String, SupremeMQMessageContainer> messageContainerMap
             = new ConcurrentHashMap<>();
 
@@ -82,7 +82,7 @@ public class SupremeMQMessageManager {
     }
 
     /**
-     * 从生产者处获得消息
+     * 生产者应答消息
      *
      * @param message
      * @return

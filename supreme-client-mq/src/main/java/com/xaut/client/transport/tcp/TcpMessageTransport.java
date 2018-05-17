@@ -1,12 +1,12 @@
 package com.xaut.client.transport.tcp;
 
 import com.xaut.client.transport.SupremeMQTransport;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.jms.JMSException;
 import javax.jms.Message;
+import javax.jms.TextMessage;
 import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
@@ -54,6 +54,24 @@ public class TcpMessageTransport extends SupremeMQTransport {
                 throw new JMSException("Socket未连接,TcpMessageTransport启动失败");
             }
             /**
+             * 消息发送线程
+             */
+
+            if (!socket.isOutputShutdown()) {
+                sendMessageThread = new Thread(
+                        new Runnable() {
+                            @Override
+                            public void run() {
+                                sendMessage();
+                                logger.debug("TcpMessageTransport消息发送线程启动【{}】", this);
+                            }
+                        }
+                );
+                sendMessageThread.start();
+            } else {
+                logger.debug("Socket未连接，TcpMessageTransport开启消息发送线程失败！");
+            }
+            /**
              * 消息接收线程
              */
             if (!socket.isInputShutdown()) {
@@ -68,25 +86,6 @@ public class TcpMessageTransport extends SupremeMQTransport {
                 receiveMessageThread.start();
             } else {
                 logger.debug("Socket未连接，TcpMessageTransport开启消息接收线程失败！");
-            }
-
-            /**
-             * 消息发送线程
-             */
-
-            if (!socket.isOutputShutdown()) {
-                sendMessageThread = new Thread(
-                        new Runnable() {
-                            @Override
-                            public void run() {
-                                sendMessage();
-                                logger.debug("TcpMessageTransport消息接收线程启动【{}】", this);
-                            }
-                        }
-                );
-                sendMessageThread.start();
-            } else {
-                logger.debug("Socket未连接，TcpMessageTransport开启消息发送线程失败！");
             }
         } catch (IOException e) {
             logger.error("Socket对象启动失败", e);
@@ -134,7 +133,7 @@ public class TcpMessageTransport extends SupremeMQTransport {
      */
     private void sendMessage() {
         Message message = null;
-//        ByteArrayOutputStream byteArrayOutputStream = null;
+        ByteArrayOutputStream byteArrayOutputStream = null;
         ObjectOutputStream objectOutputStream = null;
         while (true) {
             try {
@@ -149,10 +148,15 @@ public class TcpMessageTransport extends SupremeMQTransport {
                     && !socket.isOutputShutdown()) {
 
                 try {
-//                    byteArrayOutputStream = new ByteArrayOutputStream();
-                    objectOutputStream = new ObjectOutputStream(new BufferedOutputStream(socket.getOutputStream()));
+                    byteArrayOutputStream = new ByteArrayOutputStream();
+                    objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
+//                    objectOutputStream = new ObjectOutputStream(new BufferedOutputStream(socket.getOutputStream()));
                     objectOutputStream.writeObject(message);
                     objectOutputStream.flush();
+
+                    socket.getOutputStream().write(byteArrayOutputStream.toByteArray());
+                    byteArrayOutputStream.flush();
+
                     logger.debug("消息发送完毕【{}】", message);
                 } catch (IOException e) {
                     logger.error("消息【{}】发送失败失败：{}", message, e);
@@ -165,14 +169,14 @@ public class TcpMessageTransport extends SupremeMQTransport {
                             e.printStackTrace();
                         }
                     }
-//                    if (byteArrayOutputStream != null) {
-//                        try {
-//                            byteArrayOutputStream.close();
-//                        } catch (IOException e) {
-//                            logger.error("关闭byteArrayOutputStream失败");
-//                            e.printStackTrace();
-//                        }
-//                    }
+                    if (byteArrayOutputStream != null) {
+                        try {
+                            byteArrayOutputStream.close();
+                        } catch (IOException e) {
+                            logger.error("关闭byteArrayOutputStream失败");
+                            e.printStackTrace();
+                        }
+                    }
                 }
             }
         }
@@ -194,8 +198,12 @@ public class TcpMessageTransport extends SupremeMQTransport {
                 if (byteNum <= 0) {
                     continue;
                 }
+
 //                objectInputStream = new ObjectInputStream(new ByteArrayInputStream(objectByte, 0, byteNum));
-                objectInputStream = new ObjectInputStream(new BufferedInputStream(socket.getInputStream()));
+                objectInputStream = new ObjectInputStream(new ByteArrayInputStream(objectByte,0,byteNum));
+                logger.debug("客户端的socket【{}】", socket);
+//                objectInputStream = new ObjectInputStream(new BufferedInputStream(socket.getInputStream()));
+                logger.debug("输入流【{}】", objectInputStream);
                 try {
                     receiveMessageObject = objectInputStream.readObject();
                     logger.debug("读取的消息为【{}】", receiveMessageObject);
@@ -208,6 +216,7 @@ public class TcpMessageTransport extends SupremeMQTransport {
                 }
                 message = (Message) receiveMessageObject;
                 logger.info("客户端收到一条消息【{}】", message);
+                logger.debug("我的调试过程，客户端收到的消息ID为【{}】",message.getJMSMessageID());
                 receiveMessageQueue.put(message);
             }
             logger.error("Socket状态异常，TcpMessageTransport接收消息线程结束！");

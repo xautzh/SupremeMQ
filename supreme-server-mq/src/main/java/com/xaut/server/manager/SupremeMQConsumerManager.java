@@ -47,6 +47,12 @@ public class SupremeMQConsumerManager {
     //2.将消息推送到一个消费者的待发送队列
     //3/生成消费者id  可以使用Md5加密算法 或者random随机  推荐前者 唯一性较高
 
+    /**
+     * 注册消费者
+     * @param message 消息
+     * @param sendMessageQueue 发送队列
+     * @throws JMSException
+     */
     public void addConsumer(Message message, BlockingQueue<Message> sendMessageQueue) throws JMSException {
         if (message == null || !MessageType.CUSTOMER_REGISTER_MESSAGE.getValue()
                 .equals(message.getJMSType())) {
@@ -190,11 +196,11 @@ public class SupremeMQConsumerManager {
                     Iterator<Entry<T, Boolean>> iterator = contentArray.iterator();
                     while (iterator.hasNext()) {
                         try {
-                            if (!iterator.next().getValue()) {
+                            Entry<T,Boolean> entry = iterator.next();
+                            if (!entry.getValue()){
                                 continue;
                             }
-
-                            outputQueue.put(iterator.next().getKey());
+                            outputQueue.put(entry.getKey());
                         } catch (InterruptedException e) {
                             continue;
                         }

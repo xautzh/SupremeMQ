@@ -94,7 +94,6 @@ public class SupremeMQMessageConsumer implements MessageConsumer {
         if (messageListener == null) {
             throw new JMSException("消息监听器不能为空！");
         }
-
         this.messageListener = messageListener;
     }
 
@@ -110,7 +109,13 @@ public class SupremeMQMessageConsumer implements MessageConsumer {
 
     @Override
     public Message receiveNoWait() throws JMSException {
-        return null;
+        Message message = null;
+        try {
+            message = messageQueue.take();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return message;
     }
 
     @Override
@@ -169,10 +174,10 @@ public class SupremeMQMessageConsumer implements MessageConsumer {
      * 开启一个消费者
      */
     public void start() {
-        //消息消费线程启动
-        new Thread(consumeMessageTask).start();
-        //消息应答线程启动
-        new Thread(ackMessageTask).start();
+        if (state.equals(ConsumerState.CREATE.getValue())){
+            state = ConsumerState.WORKING.getValue();
+        }
+        logger.debug("开启一个消费者 哈哈哈");
     }
 
     /**

@@ -7,6 +7,9 @@ import com.xaut.common.message.bean.SupremeMQTextMessage;
 import org.junit.Test;
 
 import javax.jms.*;
+import java.io.BufferedReader;
+import java.lang.management.BufferPoolMXBean;
+import java.util.Scanner;
 
 public class ClientTest {
     @Test
@@ -47,17 +50,25 @@ public class ClientTest {
         connection.start();
         Queue queue = new SupremeMQDestination("supreme", MessageContainerType.QUEUE.getValue());
         Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+        MessageConsumer consumer = session.createConsumer(queue);
+        //String rcvMessage = ((TextMessage)consumer.receiveNoWait()).getText();
+        //System.out.println("消费者收生产者发送的消息"+rcvMessage);
+//        consumer.setMessageListener(message -> {
+//            try {
+//                System.out.println("consumer" + ((SupremeMQTextMessage) message).getText());
+//            } catch (JMSException e) {
+//                e.printStackTrace();
+//            }
+//        });
         MessageProducer producer = session.createProducer(queue);
         SupremeMQTextMessage textMessage = (SupremeMQTextMessage) session.createTextMessage();
         textMessage.setText("hello");
         producer.send(textMessage);
-        MessageConsumer consumer = session.createConsumer(queue);
-        consumer.setMessageListener(message -> {
-            try {
-                System.out.println("consumer" + ((SupremeMQTextMessage) message).getText());
-            } catch (JMSException e) {
-                e.printStackTrace();
-            }
-        });
+        System.out.println("consumer消费"+((TextMessage)consumer.receiveNoWait()).getText());
+        while (true){
+            Scanner scanner = new Scanner(System.in);
+            Object o = scanner.hasNext();
+            System.out.println(o);
+        }
     }
 }

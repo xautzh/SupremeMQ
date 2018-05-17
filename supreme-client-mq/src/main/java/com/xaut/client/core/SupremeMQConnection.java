@@ -43,6 +43,7 @@ public class SupremeMQConnection implements Connection {
         //1.创建客户端传送器
         this.supremeMQTransport = supremeMQTransport;
         //2.消息分发器
+        logger.debug("我的调试，当前接收队列内容【{}】，当前发送队列内容【{}】",supremeMQTransport.getReceiveMessageQueue(),supremeMQTransport.getSendMessageQueue());
         this.messageDispatcher = new MessageDispatcher(supremeMQTransport.getReceiveMessageQueue(),
                 supremeMQTransport.getSendMessageQueue());
     }
@@ -90,11 +91,11 @@ public class SupremeMQConnection implements Connection {
         supremeMQTransport.start();
         messageDispatcher.start();
         //将客户端定制参数传递给服务端
-        SupremeMQMapMessage message = new SupremeMQMapMessage();
-        message.setJMSType(MessageType.CUSTOMER_MESSAGE_PULL.getValue());
-        message.setInt(ConnectionProperty.CLIENT_MESSAGE_BATCH_ACK_QUANTITY.getKey(),
-                (Integer) ConnectionProperty.CLIENT_MESSAGE_BATCH_ACK_QUANTITY.getValue());
-        messageDispatcher.sendMessage(message);
+//        SupremeMQMapMessage message = new SupremeMQMapMessage();
+//        message.setJMSType(MessageType.CUSTOMER_MESSAGE_PULL.getValue());
+//        message.setInt(ConnectionProperty.CLIENT_MESSAGE_BATCH_ACK_QUANTITY.getKey(),
+//                (Integer) ConnectionProperty.CLIENT_MESSAGE_BATCH_ACK_QUANTITY.getValue());
+//        messageDispatcher.sendMessage(message);
         // 消费者消费消息和发送应答消息的线程池执行器
         threadPoolExecutor = (ThreadPoolExecutor) Executors.newCachedThreadPool();
         for (SupremeMQSession supremeMQSession : sessionMap.values()) {

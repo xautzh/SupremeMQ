@@ -26,10 +26,10 @@ public class MessageDispatcher {
     //key-消费者id value-消费者
     private ConcurrentHashMap<String, SupremeMQMessageConsumer> consumerMap =
             new ConcurrentHashMap<>();
-    //消费应答map key-发送消息的id value-应答成功闭锁
+    //消费者 应答map key-发送消息的id value-应答成功闭锁
     private ConcurrentHashMap<String, CountDownLatch> messageAckMap =
             new ConcurrentHashMap<>();
-    //消费注册map key-客户端设定的消费者ID,value-消息应答成功的闭锁
+    //消费者 注册map key-客户端设定的消费者ID,value-消息应答成功的闭锁
     private ConcurrentHashMap<String, DataCountDownLatch<Message>> addConsumerAckMap =
             new ConcurrentHashMap<>();
     //待分发的消息队列
@@ -67,6 +67,7 @@ public class MessageDispatcher {
                 Message message = null;
                 while (!Thread.currentThread().isInterrupted()) {
                     try {
+                        logger.debug("当前队列中内容为【{}】",receiveMessageQueue.size());
                         message = receiveMessageQueue.take();
 
                     } catch (InterruptedException e) {
@@ -93,7 +94,8 @@ public class MessageDispatcher {
                                 logger.error("客户端接收到生产者发来的消息中消费者ID为空，分配消息到消费者失败:{}", message);
                                 continue;
                             }
-                            //放入制定消费者队列中
+                            //放入指定消费者队列中
+                            logger.debug("消息【{}】已放入队列",message);
                             SupremeMQMessageConsumer supremeMQMessageConsumer = consumerMap.get(consumerId);
                             supremeMQMessageConsumer.putMessage(message);
 
@@ -173,12 +175,14 @@ public class MessageDispatcher {
         messageAckMap.put(messageId, countDownLatch);
 
         try {
+            logger.debug("前【{}】",sendMessageQueue.size());
             sendMessageQueue.put(message);
+            logger.debug("后【{}】",sendMessageQueue.size());
             countDownLatch.await();
             messageAckMap.remove(messageId);
         } catch (InterruptedException e) {
-            logger.error("SugarMQMessageProducer消息发送被中断！");
-            throw new JMSException("SugarMQMessageProducer消息发送被中断:" + e.getMessage());
+            logger.error("SupremeMQMessageProducer消息发送被中断！");
+            throw new JMSException("SupremeMQMessageProducer消息发送被中断:" + e.getMessage());
         }
 
     }
