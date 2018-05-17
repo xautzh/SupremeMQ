@@ -1,0 +1,1518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0f3e7661-a01a-425d-9814-58544dce4496" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/supreme-client-mq/target/" />
+    <ignored path="$PROJECT_DIR$/supreme-server-mq/target/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/supreme-common-mq/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="ServerTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/supreme-server-mq/src/test/java/com/xaut/server/ServerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/supreme-client-mq/src/test/java/com/xaut/client/ClientTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1140">
+              <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SupremeMQMessageProducer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/supreme-client-mq/src/main/java/com/xaut/client/producer/SupremeMQMessageProducer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1880">
+              <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SupremeMQSession.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/supreme-client-mq/src/main/java/com/xaut/client/core/SupremeMQSession.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3000">
+              <caret line="163" column="70" lean-forward="false" selection-start-line="163" selection-start-column="70" selection-end-line="163" selection-end-column="70" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SupremeMQMessageConsumer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/supreme-client-mq/src/main/java/com/xaut/client/consumer/SupremeMQMessageConsumer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2960">
+              <caret line="179" column="36" lean-forward="false" selection-start-line="179" selection-start-column="36" selection-end-line="179" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SupremeMQConnectionFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/supreme-client-mq/src/main/java/com/xaut/client/core/SupremeMQConnectionFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="760">
+              <caret line="42" column="5" lean-forward="false" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SupremeMQTransportFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/supreme-client-mq/src/main/java/com/xaut/client/transport/SupremeMQTransportFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="740">
+              <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SupremeMQConnection.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/supreme-client-mq/src/main/java/com/xaut/client/core/SupremeMQConnection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="820">
+              <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TcpMessageTransport.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/supreme-client-mq/src/main/java/com/xaut/client/transport/tcp/TcpMessageTransport.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4060">
+              <caret line="218" column="47" lean-forward="false" selection-start-line="218" selection-start-column="47" selection-end-line="218" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageDispatcher.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/supreme-client-mq/src/main/java/com/xaut/client/transport/MessageDispatcher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="263">
+              <caret line="97" column="62" lean-forward="false" selection-start-line="97" selection-start-column="62" selection-end-line="97" selection-end-column="62" />
+              <folding>
+                <element signature="e#8350#8359#0" expanded="true" />
+                <element signature="e#9275#9276#0" expanded="true" />
+                <element signature="e#9314#9315#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="JUnit4 Test Class" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>createP</find>
+      <find>ackonowledgeType</find>
+      <find>Sugar启动完毕</find>
+      <find>SupremeMQConsumerDispatcher</find>
+      <find>clientMessageBatchSendAmount</find>
+      <find>tcpSupremeMQTransportCenter</find>
+      <find>remove</find>
+      <find>getSendMessageQueue</find>
+      <find>SupremeMQDestinationDispatcher</find>
+      <find>createText</find>
+      <find>threadPoolExecutor</find>
+      <find>active</find>
+      <find>MessageDispatcher还未启动，消息发送失败</find>
+      <find>start</find>
+      <find>MessageDispatcher</find>
+      <find>dispatcherThread</find>
+      <find>messageDispatcher</find>
+      <find>isStarted</find>
+      <find>socket</find>
+      <find>message</find>
+      <find>sendMessage</find>
+      <find>consumerMap</find>
+      <find>supremeMQTransport</find>
+      <find>setInt</find>
+      <find>supremeMQMessageManager</find>
+      <find>客户端接收到服务端的生产者应答消息</find>
+      <find>客户端收到一条消息</find>
+      <find>我的调试</find>
+      <find>SupremeMQMessageProducer消息发送被中断</find>
+      <find>receiveMessageQueue</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="REBASE" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/supreme-server-mq/src/main/java/com/xaut/server/constant/MessageContainerType.java" />
+        <option value="$PROJECT_DIR$/supreme-server-mq/src/main/java/com/xaut/server/message/SupremeMQDestination.java" />
+        <option value="$PROJECT_DIR$/supreme-common-mq/src/main/java/com/xaut/common/manager/SupremeMQServerManager.java" />
+        <option value="$PROJECT_DIR$/supreme-common-mq/src/main/java/com/xaut/common/constant/MessageContainerType.java" />
+        <option value="$PROJECT_DIR$/supreme-common-mq/src/main/java/com/xaut/common/message/SupremeMQDestination.java" />
+        <option value="$PROJECT_DIR$/supreme-common-mq/src/main/java/com/xaut/common/message/bean/SupremeMQTextMessage.java" />
+        <option value="$PROJECT_DIR$/supreme-common-mq/src/main/java/com/xaut/common/message/bean/SupremeMQMessage.java" />
+        <option value="$PROJECT_DIR$/supreme-common-mq/src/main/java/com/xaut/common/message/bean/SupremeMQBytesMessage.java" />
+        <option value="$PROJECT_DIR$/supreme-common-mq/src/main/java/com/xaut/common/message/bean/SupremeMQMapMessage.java" />
+        <option value="$PROJECT_DIR$/supreme-common-mq/src/main/java/com/xaut/common/message/bean/SupremeMQObjectMessage.java" />
+        <option value="$PROJECT_DIR$/supreme-common-mq/src/main/java/com/xaut/common/message/bean/SupremeMQStreamMessage.java" />
+        <option value="$PROJECT_DIR$/supreme-server-mq/pom.xml" />
+        <option value="$PROJECT_DIR$/supreme-server-mq/src/test/java/com/xaut/server/queue/SupremeMQMessageContainerTest.java" />
+        <option value="$PROJECT_DIR$/supreme-client-mq/pom.xml" />
+        <option value="$PROJECT_DIR$/supreme-common-mq/src/main/java/com/xaut/common/constant/MessagePro.java" />
+        <option value="$PROJECT_DIR$/supreme-common-mq/src/main/java/com/xaut/common/utils/DateUtils.java" />
+        <option value="$PROJECT_DIR$/supreme-common-mq/src/main/java/com/xaut/common/utils/MessageIdUtils.java" />
+        <option value="$PROJECT_DIR$/supreme-server-mq/src/test/java/com/xaut/server/manager/SupremeMQMessageManagerTest.java" />
+        <option value="$PROJECT_DIR$/supreme-common-mq/src/main/java/com/xaut/common/constant/ConnectionProperty.java" />
+        <option value="$PROJECT_DIR$/supreme-server-mq/src/main/java/com/xaut/server/queue/SupremeMQMessageContainer.java" />
+        <option value="$PROJECT_DIR$/supreme-server-mq/src/main/resources/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/supreme-server-mq/src/main/java/com/xaut/server/manager/ConnectionPoolManager.java" />
+        <option value="$PROJECT_DIR$/supreme-server-mq/src/main/java/com/xaut/server/transport/SupremeMQServerTransport.java" />
+        <option value="$PROJECT_DIR$/supreme-server-mq/src/main/resources/supremeMq-config.properties" />
+        <option value="$PROJECT_DIR$/supreme-server-mq/src/main/java/com/xaut/server/transport/SupremeMQServerTransportFactory.java" />
+        <option value="$PROJECT_DIR$/supreme-server-mq/src/main/java/com/xaut/server/transport/SupremeMQTransprotCenter.java" />
+        <option value="$PROJECT_DIR$/supreme-server-mq/src/main/java/com/xaut/server/dispatch/SupremeMQDestinationDispatcher.java" />
+        <option value="$PROJECT_DIR$/supreme-server-mq/src/test/java/com/xaut/server/ServerTest.java" />
+        <option value="$PROJECT_DIR$/supreme-server-mq/src/main/java/com/xaut/server/transport/tcp/TcpSupremeMQTransportCenter.java" />
+        <option value="$PROJECT_DIR$/supreme-server-mq/src/test/java/com/xaut/server/transportServer/TransportServerThread.java" />
+        <option value="$PROJECT_DIR$/supreme-server-mq/src/test/java/com/xaut/server/transportServer/TransportServer.java" />
+        <option value="$PROJECT_DIR$/supreme-client-mq/src/test/java/com/xaut/client/transportClient/TransportClient.java" />
+        <option value="$PROJECT_DIR$/supreme-common-mq/src/main/java/com/xaut/common/constant/ConsumerState.java" />
+        <option value="$PROJECT_DIR$/supreme-common-mq/src/main/java/com/xaut/common/constant/MessageType.java" />
+        <option value="$PROJECT_DIR$/supreme-common-mq/src/main/java/com/xaut/common/utils/SessionIdUtils.java" />
+        <option value="$PROJECT_DIR$/supreme-client-mq/src/main/java/com/xaut/client/core/SuprmeMQConnection.java" />
+        <option value="$PROJECT_DIR$/supreme-client-mq/src/main/java/com/xaut/client/core/SupremeMQConnectionFactory.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/supreme-client-mq/src/main/java/com/xaut/client/producer/SupremeMQMessageProducer.java" />
+        <option value="$PROJECT_DIR$/supreme-client-mq/src/main/java/com/xaut/client/transport/SupremeMQTransport.java" />
+        <option value="$PROJECT_DIR$/supreme-server-mq/src/main/java/com/xaut/server/manager/SupremeMQServerManager.java" />
+        <option value="$PROJECT_DIR$/supreme-server-mq/src/main/java/com/xaut/server/manager/SupremeMQMessageManager.java" />
+        <option value="$PROJECT_DIR$/supreme-server-mq/src/main/java/com/xaut/server/transport/tcp/TcpSupremeMQServerTransport.java" />
+        <option value="$PROJECT_DIR$/supreme-server-mq/src/main/java/com/xaut/server/manager/SupremeMQConsumerManager.java" />
+        <option value="$PROJECT_DIR$/supreme-server-mq/src/main/java/com/xaut/server/dispatch/SupremeMQConsumerDispatcher.java" />
+        <option value="$PROJECT_DIR$/supreme-client-mq/src/main/java/com/xaut/client/consumer/SupremeMQMessageConsumer.java" />
+        <option value="$PROJECT_DIR$/supreme-client-mq/src/test/java/com/xaut/client/ClientTest.java" />
+        <option value="$PROJECT_DIR$/supreme-client-mq/src/main/java/com/xaut/client/transport/tcp/TcpMessageTransport.java" />
+        <option value="$PROJECT_DIR$/supreme-client-mq/src/main/java/com/xaut/client/core/SupremeMQConnection.java" />
+        <option value="$PROJECT_DIR$/supreme-client-mq/src/main/java/com/xaut/client/core/SupremeMQSession.java" />
+        <option value="$PROJECT_DIR$/supreme-client-mq/src/main/java/com/xaut/client/transport/MessageDispatcher.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/apache-maven-3.5.3" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.5.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1370" />
+    <option name="height" value="772" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SupremeMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupremeMQ" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupremeMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupremeMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="supreme-client-mq" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupremeMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupremeMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="supreme-client-mq" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupremeMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupremeMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="supreme-client-mq" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupremeMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupremeMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="supreme-client-mq" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupremeMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupremeMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="supreme-client-mq" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupremeMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupremeMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="supreme-client-mq" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupremeMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupremeMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="supreme-client-mq" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="transport" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupremeMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupremeMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="supreme-client-mq" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="transport" type="462c0819:PsiDirectoryNode" />
+              <item name="tcp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupremeMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupremeMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="supreme-client-mq" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupremeMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupremeMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="supreme-client-mq" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupremeMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupremeMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="supreme-client-mq" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupremeMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupremeMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="supreme-common-mq" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupremeMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupremeMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="supreme-common-mq" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupremeMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupremeMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="supreme-common-mq" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupremeMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupremeMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="supreme-common-mq" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupremeMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupremeMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="supreme-common-mq" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupremeMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupremeMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="supreme-common-mq" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="constant" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupremeMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupremeMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="supreme-server-mq" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupremeMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupremeMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="supreme-server-mq" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupremeMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupremeMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="supreme-server-mq" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupremeMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupremeMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="supreme-server-mq" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupremeMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupremeMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="supreme-server-mq" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupremeMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupremeMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="supreme-server-mq" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupremeMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupremeMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="supreme-server-mq" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupremeMQ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupremeMQ" type="462c0819:PsiDirectoryNode" />
+              <item name="supreme-server-mq" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="D:/SugarMQ/SugarMQ" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.xaut.server.manager" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.xaut.common.constant" />
+      <recent name="com.xaut.server.constant" />
+      <recent name="com.xaut.client.transport" />
+      <recent name="com.xaut.server.transport" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\SupremeMQ\supreme-common-mq\src\main\java\com\xaut\common" />
+      <recent name="E:\SupremeMQ\supreme-server-mq\src\main\java\com\xaut\server" />
+      <recent name="E:\SupremeMQ\supreme-server-mq\src\main\resources" />
+      <recent name="E:\SupremeMQ\supreme-client-mq\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.ClientTest.client">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration name="TransportClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.xaut.client.transportClient.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.xaut.client.transportClient.TransportClient" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="client" />
+      <envs />
+    </configuration>
+    <configuration name="TransportServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.xaut.server.transportServer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.xaut.server.transportServer.TransportServer" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="server" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration name="ClientTest.client" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.xaut.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="client" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.xaut.client" />
+      <option name="MAIN_CLASS_NAME" value="com.xaut.client.ClientTest" />
+      <option name="METHOD_NAME" value="client" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="ServerTest.server" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.xaut.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="server" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.xaut.server" />
+      <option name="MAIN_CLASS_NAME" value="com.xaut.server.ServerTest" />
+      <option name="METHOD_NAME" value="server" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="ServerTest.serverTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.xaut.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="server" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.xaut.server" />
+      <option name="MAIN_CLASS_NAME" value="com.xaut.server.ServerTest" />
+      <option name="METHOD_NAME" value="serverTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration name="ClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xaut.client.ClientApplication" />
+      <module name="client" />
+      <envs />
+    </configuration>
+    <configuration name="CommonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xaut.common.CommonApplication" />
+      <module name="supreme-common-mq" />
+      <envs />
+    </configuration>
+    <configuration name="ServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xaut.server.ServerApplication" />
+      <module name="server" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <list size="8">
+      <item index="0" class="java.lang.String" itemvalue="Spring Boot.ClientApplication" />
+      <item index="1" class="java.lang.String" itemvalue="Spring Boot.ServerApplication" />
+      <item index="2" class="java.lang.String" itemvalue="Spring Boot.CommonApplication" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ServerTest.serverTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ServerTest.server" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.ClientTest.client" />
+      <item index="6" class="java.lang.String" itemvalue="Application.TransportServer" />
+      <item index="7" class="java.lang.String" itemvalue="Application.TransportClient" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ClientTest.client" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ServerTest.serverTest" />
+        <item index="2" class="java.lang.String" itemvalue="Application.TransportClient" />
+        <item index="3" class="java.lang.String" itemvalue="Application.TransportServer" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ServerTest.server" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0f3e7661-a01a-425d-9814-58544dce4496" name="Default" comment="" />
+      <created>1525226385345</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1525226385345</updated>
+      <workItem from="1525226389174" duration="1547000" />
+      <workItem from="1525228752997" duration="23173000" />
+      <workItem from="1525308644706" duration="11694000" />
+      <workItem from="1525394112429" duration="9585000" />
+      <workItem from="1525655909718" duration="21817000" />
+      <workItem from="1525739283930" duration="21261000" />
+      <workItem from="1525857274796" duration="2421000" />
+      <workItem from="1525912883214" duration="4934000" />
+      <workItem from="1525998823008" duration="4650000" />
+      <workItem from="1526004636919" duration="765000" />
+      <workItem from="1526204870318" duration="10000" />
+      <workItem from="1526257814576" duration="9105000" />
+      <workItem from="1526345492562" duration="1241000" />
+      <workItem from="1526349990966" duration="819000" />
+      <workItem from="1526351219519" duration="8863000" />
+      <workItem from="1526387380821" duration="176000" />
+      <workItem from="1526388729320" duration="734000" />
+      <workItem from="1526434635031" duration="7544000" />
+      <workItem from="1526517863444" duration="917000" />
+    </task>
+    <task id="LOCAL-00001" summary="school">
+      <created>1525227047089</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1525227047089</updated>
+    </task>
+    <task id="LOCAL-00002" summary="school">
+      <created>1525253178792</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1525253178792</updated>
+    </task>
+    <task id="LOCAL-00003" summary="producer">
+      <created>1525267163881</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1525267163881</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update">
+      <created>1525268622789</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1525268622789</updated>
+    </task>
+    <task id="LOCAL-00005" summary="update">
+      <created>1525315498917</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1525315498917</updated>
+    </task>
+    <task id="LOCAL-00006" summary="update">
+      <created>1525316733374</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1525316733374</updated>
+    </task>
+    <task id="LOCAL-00007" summary="common包添加">
+      <created>1525317178492</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1525317178492</updated>
+    </task>
+    <task id="LOCAL-00008" summary="common包添加">
+      <created>1525317655806</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1525317655806</updated>
+    </task>
+    <task id="LOCAL-00009" summary="MessageManager">
+      <created>1525402523502</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1525402523502</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Manager">
+      <created>1525662491758</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1525662491758</updated>
+    </task>
+    <task id="LOCAL-00011" summary="update">
+      <created>1525676814799</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1525676814799</updated>
+    </task>
+    <task id="LOCAL-00012" summary="transport">
+      <created>1525678629050</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1525678629050</updated>
+    </task>
+    <task id="LOCAL-00013" summary="transport的修改">
+      <created>1525697929852</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1525697929852</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Consumer的创建">
+      <created>1525748694120</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1525748694120</updated>
+    </task>
+    <task id="LOCAL-00015" summary="addConsumer">
+      <created>1525831697791</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1525831697791</updated>
+    </task>
+    <task id="LOCAL-00016" summary="session">
+      <created>1525834183477</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1525834183477</updated>
+    </task>
+    <task id="LOCAL-00017" summary="fix error">
+      <created>1525849196512</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1525849196512</updated>
+    </task>
+    <task id="LOCAL-00018" summary="待解决 反序列化失败问题">
+      <created>1525851372467</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1525851372467</updated>
+    </task>
+    <task id="LOCAL-00019" summary="待解决 反序列化失败问题">
+      <created>1526004952110</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1526004952110</updated>
+    </task>
+    <task id="LOCAL-00020" summary="客户端bug">
+      <created>1526529051548</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1526529051548</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="ClientTest_client - 2018.05.16 at 10h 59m 42s.xml">
+      <configuration name="ClientTest.client" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClientTest_client - 2018.05.16 at 11h 12m 37s.xml">
+      <configuration name="ClientTest.client" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClientTest_client - 2018.05.16 at 11h 16m 21s.xml">
+      <configuration name="ClientTest.client" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClientTest_client - 2018.05.16 at 17h 29m 13s.xml">
+      <configuration name="ClientTest.client" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClientTest_client - 2018.05.16 at 17h 29m 33s.xml">
+      <configuration name="ClientTest.client" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ServerTest_serverTest - 2018.05.16 at 10h 54m 48s.xml">
+      <configuration name="ServerTest.serverTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ServerTest_serverTest - 2018.05.16 at 11h 12m 34s.xml">
+      <configuration name="ServerTest.serverTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ServerTest_serverTest - 2018.05.16 at 11h 16m 23s.xml">
+      <configuration name="ServerTest.serverTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ServerTest_serverTest - 2018.05.16 at 17h 29m 04s.xml">
+      <configuration name="ServerTest.serverTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ServerTest_serverTest - 2018.05.16 at 17h 29m 33s.xml">
+      <configuration name="ServerTest.serverTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="131256000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294893" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.78253704" sideWeight="0.4969743" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294893" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294893" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27458397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.72487646" sideWeight="0.4969743" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35914332" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="school" />
+    <MESSAGE value="producer" />
+    <MESSAGE value="common包添加" />
+    <MESSAGE value="MessageManager" />
+    <MESSAGE value="Manager" />
+    <MESSAGE value="update" />
+    <MESSAGE value="transport" />
+    <MESSAGE value="transport的修改" />
+    <MESSAGE value="Consumer的创建" />
+    <MESSAGE value="addConsumer" />
+    <MESSAGE value="session" />
+    <MESSAGE value="fix error" />
+    <MESSAGE value="待解决 反序列化失败问题" />
+    <MESSAGE value="客户端bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="客户端bug" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="19" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/supreme-server-mq/src/test/java/com/xaut/server/manager/SupremeMQMessageManagerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="14" column="28" lean-forward="false" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/concurrent/atomic/AtomicInteger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="184" column="21" lean-forward="false" selection-start-line="184" selection-start-column="21" selection-end-line="184" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-server-mq/src/main/resources/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-server-mq/src/main/java/com/xaut/server/transport/SupremeMQServerTransport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-client-mq/src/test/java/com/xaut/client/ClientApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-server-mq/src/main/resources/supremeMq-config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="33" lean-forward="false" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-server-mq/src/test/java/com/xaut/server/ServerApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-server-mq/src/test/java/com/xaut/server/StudentTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-server-mq/src/test/java/com/xaut/server/transportServer/TransportServerThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-client-mq/src/test/java/com/xaut/client/transportClient.java" />
+    <entry file="file://$PROJECT_DIR$/supreme-server-mq/src/test/java/com/xaut/server/transportServer/TransportServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-client-mq/src/test/java/com/xaut/client/transportClient/TransportClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="19" column="27" lean-forward="false" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-common-mq/src/main/java/com/xaut/common/constant/ConsumerState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="20">
+            <caret line="1" column="8" lean-forward="true" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7-sources.jar!/org/apache/commons/lang3/StringUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="116" column="13" lean-forward="false" selection-start-line="116" selection-start-column="13" selection-end-line="116" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-common-mq/src/main/java/com/xaut/common/utils/SessionIdUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="9" column="73" lean-forward="false" selection-start-line="9" selection-start-column="73" selection-end-line="9" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/javax.jms/3.0.1/javax.jms-3.0.1.jar!/javax/jms/Connection.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="128" column="17" lean-forward="false" selection-start-line="128" selection-start-column="17" selection-end-line="128" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/javax.jms/3.0.1/javax.jms-3.0.1.jar!/javax/jms/MessageProducer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-265">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-server-mq/src/main/java/com/xaut/server/transport/SupremeMQServerTransportFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-common-mq/src/main/java/com/xaut/common/message/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="25" column="32" lean-forward="false" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-server-mq/src/main/java/com/xaut/server/manager/ConnectionPoolManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/lang/Runnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="67" column="25" lean-forward="false" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/javax.jms/3.0.1/javax.jms-3.0.1.jar!/javax/jms/MessageListener.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-server-mq/src/main/java/com/xaut/server/transport/SupremeMQTransprotCenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-server-mq/src/main/java/com/xaut/server/manager/SupremeMQServerManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar!/org/slf4j/LoggerFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="300" column="0" lean-forward="false" selection-start-line="300" selection-start-column="0" selection-end-line="300" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar!/ch/qos/logback/classic/Logger.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="344" column="0" lean-forward="false" selection-start-line="344" selection-start-column="0" selection-end-line="344" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-server-mq/src/main/java/com/xaut/server/transport/tcp/TcpSupremeMQTransportCenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-common-mq/src/main/java/com/xaut/common/constant/MessageType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-common-mq/src/main/java/com/xaut/common/constant/MessageProperty.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-server-mq/src/main/java/com/xaut/server/queue/SupremeMQMessageContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="20" column="56" lean-forward="false" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-server-mq/src/main/java/com/xaut/server/manager/SupremeMQMessageManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="45" column="27" lean-forward="false" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-server-mq/src/main/java/com/xaut/server/transport/tcp/TcpSupremeMQServerTransport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="657">
+          <caret line="174" column="0" lean-forward="true" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-common-mq/src/main/java/com/xaut/common/constant/ConnectionProperty.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-common-mq/src/main/java/com/xaut/common/message/bean/SupremeMQMapMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="22" column="15" lean-forward="false" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-common-mq/src/main/java/com/xaut/common/message/SupremeMQDestination.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="820">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-server-mq/src/main/java/com/xaut/server/manager/SupremeMQConsumerManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1140">
+          <caret line="77" column="41" lean-forward="false" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-server-mq/src/main/java/com/xaut/server/dispatch/SupremeMQConsumerDispatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="28" column="20" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-server-mq/src/main/java/com/xaut/server/dispatch/SupremeMQDestinationDispatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-client-mq/src/main/java/com/xaut/client/transport/SupremeMQTransport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <element signature="e#405#406#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-server-mq/src/test/java/com/xaut/server/ServerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-client-mq/src/test/java/com/xaut/client/ClientTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1140">
+          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-client-mq/src/main/java/com/xaut/client/producer/SupremeMQMessageProducer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1880">
+          <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-client-mq/src/main/java/com/xaut/client/core/SupremeMQSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3000">
+          <caret line="163" column="70" lean-forward="false" selection-start-line="163" selection-start-column="70" selection-end-line="163" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-client-mq/src/main/java/com/xaut/client/consumer/SupremeMQMessageConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2960">
+          <caret line="179" column="36" lean-forward="false" selection-start-line="179" selection-start-column="36" selection-end-line="179" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-client-mq/src/main/java/com/xaut/client/core/SupremeMQConnectionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="42" column="5" lean-forward="false" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-client-mq/src/main/java/com/xaut/client/transport/SupremeMQTransportFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="740">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-client-mq/src/main/java/com/xaut/client/core/SupremeMQConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="820">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-client-mq/src/main/java/com/xaut/client/transport/tcp/TcpMessageTransport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4060">
+          <caret line="218" column="47" lean-forward="false" selection-start-line="218" selection-start-column="47" selection-end-line="218" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/supreme-client-mq/src/main/java/com/xaut/client/transport/MessageDispatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="97" column="62" lean-forward="false" selection-start-line="97" selection-start-column="62" selection-end-line="97" selection-end-column="62" />
+          <folding>
+            <element signature="e#8350#8359#0" expanded="true" />
+            <element signature="e#9275#9276#0" expanded="true" />
+            <element signature="e#9314#9315#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>client</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: ch.qos.logback:logback-access:1.1.2</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
