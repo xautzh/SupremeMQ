@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import javax.jms.JMSException;
@@ -15,6 +16,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * server端核心管理类
  */
 @Component
+@PropertySource(value = "classpath:supremeMq-config.properties",ignoreResourceNotFound = true)
 public class SupremeMQServerManager {
 
     private @Value("${server_uri}")
@@ -60,5 +62,13 @@ public class SupremeMQServerManager {
 
     public String getUrl() {
         return url;
+    }
+
+    public SupremeMQConsumerManager getSupremeMQConsumerManager() {
+        return supremeMQConsumerManager;
+    }
+
+    public SupremeMQMessageManager getSupremeMQMessageManager() {
+        return supremeMQMessageManager;
     }
 }

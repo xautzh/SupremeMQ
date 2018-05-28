@@ -114,6 +114,9 @@ public class SupremeMQMessageContainer extends SupremeMQDestination {
      */
     public void remove(Message message) {
         consumeMessageQueue.remove(message);
+    }
 
+    public int getMessageQueueSize(){
+        return this.messageQueue.size();
     }
 }

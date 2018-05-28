@@ -7,8 +7,6 @@ import com.xaut.common.message.bean.SupremeMQTextMessage;
 import org.junit.Test;
 
 import javax.jms.*;
-import java.io.BufferedReader;
-import java.lang.management.BufferPoolMXBean;
 import java.util.Scanner;
 
 public class ClientTest {
@@ -48,24 +46,23 @@ public class ClientTest {
         SupremeMQConnectionFactory factory = new SupremeMQConnectionFactory("tcp://127.0.0.1:9090");
         Connection connection = factory.createConnection();
         connection.start();
+        //创建两个目的地队列
         Queue queue = new SupremeMQDestination("supreme", MessageContainerType.QUEUE.getValue());
+        Queue queue1 = new SupremeMQDestination("xaut", MessageContainerType.QUEUE.getValue());
         Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-        MessageConsumer consumer = session.createConsumer(queue);
-        //String rcvMessage = ((TextMessage)consumer.receiveNoWait()).getText();
-        //System.out.println("消费者收生产者发送的消息"+rcvMessage);
-//        consumer.setMessageListener(message -> {
-//            try {
-//                System.out.println("consumer" + ((SupremeMQTextMessage) message).getText());
-//            } catch (JMSException e) {
-//                e.printStackTrace();
-//            }
-//        });
         MessageProducer producer = session.createProducer(queue);
+        MessageProducer producer1 = session.createProducer(queue1);
         SupremeMQTextMessage textMessage = (SupremeMQTextMessage) session.createTextMessage();
         textMessage.setText("hello");
-        producer.send(textMessage);
-        System.out.println("consumer消费"+((TextMessage)consumer.receiveNoWait()).getText());
-        while (true){
+        for (int i = 0; i < 10; i++) {
+            producer.send(textMessage);
+            producer1.send(textMessage);
+        }
+
+        MessageConsumer messageConsumer = session.createConsumer(queue);
+        messageConsumer.setMessageListener(message -> System.out.println(""));
+
+        while (true) {
             Scanner scanner = new Scanner(System.in);
             Object o = scanner.hasNext();
             System.out.println(o);

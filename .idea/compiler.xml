@@ -18,6 +18,7 @@
     <bytecodeTargetLevel>
       <module name="client" target="1.8" />
       <module name="MQ" target="1.7" />
+      <module name="page" target="1.8" />
       <module name="server" target="1.8" />
       <module name="supreme-common-mq" target="1.8" />
     </bytecodeTargetLevel>

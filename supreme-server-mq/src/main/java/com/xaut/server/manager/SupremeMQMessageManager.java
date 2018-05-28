@@ -10,6 +10,7 @@ import com.xaut.server.queue.SupremeMQMessageContainer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import javax.jms.*;
@@ -19,6 +20,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * MOM队列管理 消息管理核心类
  */
 @Component
+@PropertySource(value = "classpath:supremeMq-config.properties",ignoreResourceNotFound = true)
 public class SupremeMQMessageManager {
     // 队列中所能容纳的消息最大数
     private @Value("${max_queue_message_num}")
@@ -132,4 +134,8 @@ public class SupremeMQMessageManager {
 //
 //        return queue;
 //    }
+
+    public ConcurrentHashMap<String, SupremeMQMessageContainer> getMessageContainerMap() {
+        return messageContainerMap;
+    }
 }
